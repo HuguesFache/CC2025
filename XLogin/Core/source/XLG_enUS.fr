@@ -1,0 +1,38 @@
+#ifdef __ODFRC__
+// English string table is defined here
+resource StringTable (kSDKDefStringsResourceID + index_enUS)
+{
+	k_enUS,									// Locale Id
+	kEuropeanWinToMacEncodingConverter,		// Character encoding converter (irp) I made this WinToMac as we have a bias to generate on Win...
+	{
+		kXLGCompanyKey,					kXLGCompanyValue,
+		kXLGAboutMenuKey,				kXLGPluginName "[US]...",
+		kXLGPluginsMenuKey,				kXLGPluginName "[US]",
+		kXLGDialogMenuItemKey,			"Show dialog[US]",
+		kSDKDefAboutThisPlugInMenuKey,	kSDKDefAboutThisPlugInMenuValue_enUS,
+		kXLGPanelTitleKey,				kXLGPluginName "[US]",
+		kXLGStaticTextKey,				kXLGPluginName "[US]",
+		kXLGDialogTitleKey, 			kXLGPluginName "[US]",
+		kXLGAboutBoxStringKey,			kXLGPluginName " [US], version " kXLGVersion " by " kXLGAuthor "\n\n" kSDKDefCopyrightStandardValue "\n\n" kSDKDefPartnersStandardValue_enUS,
+		kXLGLoginDialogTitleKey,		"Connect to XLogin",
+		kXLGLoginTextKey,				"Login",
+		kXLGPasswordTextKey,			"Password",
+		kXLGUIErrorBlankLoginKey,		"Veuillez saisir votre compte utilisateur ",
+		kXLGUIErrorBlankPasswordKey,	"Veuillez saisir votre mot de passe ",
+		kXLGUIErrorWebServiceKey,		"Erreur de Connexion",
+		kXLGUIErrorBadPasswordKey,		"Mot de Passe Incorrect",
+		kXLGUIErrorPrivilegeKey,		"Privil√®ges insuffisants",
+		kXLGUIErrorUnknownUserKey,		"Utilisateur Inconu",
+		kXLGUIErrorSOAPKey,				"Erreur de Connexion",
+		kXLGChangeStatusDialogTitleKey, "Changement d'Ètat de l'article",
+		kXLGGroupsListTextKey,			"Groupe",
+		kXLGRecipientListTextKey, 		"Destinataire",
+		kXLGStatusListTextKey,			"Etat",
+		kXLGChooseRecepientTextKey, 	"Envoyer ‡ tous",
+		kXLGEveryBodyTextKey,			"Tous",
+		kXLGAutoClosingDialogKey,		"Closing Dialog Task",
+		kXLGSubjectTextKey,				"Sujet", 
+		kXLGAutoInitVariableKey,		"Init disableCloseDoc",
+	}
+};
+#endif // __ODFRC__

@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5e42b2f0-b590-4876-9088-6d244583d957++505",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F8F4920E-DF96-4A02-8E19-48F2B563B97E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : "CC2015\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "XPubUI",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "XPubClient\/XPubUI\/XPubUI.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2015",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5e42b2f0-b590-4876-9088-6d244583d957++505"
+    }
+  ]
+}

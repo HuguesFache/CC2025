@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A03005A8-024A-4F21-9E24-ADBBDBD9303A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XPageUI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BB57E532-A740-47AC-A593-38860590220F</key>
+		<string>http://svn.trias.fr/CC2015/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XPage/UI/XPageUI.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BB57E532-A740-47AC-A593-38860590220F</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>BB57E532-A740-47AC-A593-38860590220F</key>
+		<string>http://svn.trias.fr/CC2015</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.trias.fr/CC2015/trunk/XPage/UI/XPageUI.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BB57E532-A740-47AC-A593-38860590220F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BB57E532-A740-47AC-A593-38860590220F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CC2015</string>
+		</dict>
+	</array>
+</dict>
+</plist>

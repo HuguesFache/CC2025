@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F4C460627B663A2007DF64F /* XPBC.fr in Resources */ = {isa = PBXBuildFile; fileRef = 8F4C460327B663A2007DF64F /* XPBC.fr */; };
+		A76918D11D7EEA620069B90F /* XPBCActionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918C61D7EEA620069B90F /* XPBCActionComponent.cpp */; };
+		A76918D21D7EEA620069B90F /* XPBCDocResponder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918C71D7EEA620069B90F /* XPBCDocResponder.cpp */; };
+		A76918D31D7EEA620069B90F /* XPBCDocServiceProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918C81D7EEA620069B90F /* XPBCDocServiceProvider.cpp */; };
+		A76918D41D7EEA620069B90F /* XPBCLoginDialogController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918CA1D7EEA620069B90F /* XPBCLoginDialogController.cpp */; };
+		A76918D81D7EEA620069B90F /* XPBCSetStringCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918CE1D7EEA620069B90F /* XPBCSetStringCmd.cpp */; };
+		A76918D91D7EEA620069B90F /* XPBCStartupShutdown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918CF1D7EEA620069B90F /* XPBCStartupShutdown.cpp */; };
+		A76918DA1D7EEA620069B90F /* XPBCUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918D01D7EEA620069B90F /* XPBCUtils.cpp */; };
+		A76918F31D7EEC760069B90F /* SDKPlugInEntrypoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A76918F21D7EEC760069B90F /* SDKPlugInEntrypoint.cpp */; };
+		A76918F51D7F04090069B90F /* InDesignModelAndUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76918F41D7F04090069B90F /* InDesignModelAndUI.framework */; };
+		A7EA31581D86AE01002AE04A /* XPBCAnnoncesPanelObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EA31521D86AE01002AE04A /* XPBCAnnoncesPanelObserver.cpp */; };
+		A7EA31591D86AE01002AE04A /* XPBCAnnoncesTreeViewAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EA31531D86AE01002AE04A /* XPBCAnnoncesTreeViewAdapter.cpp */; };
+		A7EA315A1D86AE01002AE04A /* XPBCAnnoncesTreeViewWidgetMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EA31541D86AE01002AE04A /* XPBCAnnoncesTreeViewWidgetMgr.cpp */; };
+		A7EA31601D86E269002AE04A /* XPBCAnnonceNodeID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EA315E1D86E269002AE04A /* XPBCAnnonceNodeID.cpp */; };
+		A7EBB4531D8704A30040DDC3 /* XPBCAnnoncesList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EBB4521D8704A30040DDC3 /* XPBCAnnoncesList.cpp */; };
+		F957086615C90B3E00C95573 /* XPBCNoStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EECD08840E9300D809E1 /* XPBCNoStrip.cpp */; };
+		F957086715C90B3E00C95573 /* XPBCID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EECE08840E9400D809E1 /* XPBCID.cpp */; };
+		F957087515C90B5100C95573 /* libPublicPlugIn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F957084E15C90B2D00C95573 /* libPublicPlugIn.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		F957086F15C90B3E00C95573 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.fr";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(REZ_COLLECTOR_DIR)/$(INPUT_FILE_NAME).rsrc",
+			);
+			runOncePerArchitecture = 0;
+			script = "$ID_SDK_ROOT/devtools/bin/odfrc-cmd -d RELEASE $ODFRC_ADDITIONAL_FLAGS -o \"$REZ_COLLECTOR_DIR/$INPUT_FILE_NAME.rsrc\" \"$INPUT_FILE_PATH\"\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		4B05EECD08840E9300D809E1 /* XPBCNoStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCNoStrip.cpp; path = /Users/melody/deve/InDesign/Sources/cc2021/XPubClient/XPubUI/source/XPBCNoStrip.cpp; sourceTree = SOURCE_ROOT; };
+		4B05EECE08840E9400D809E1 /* XPBCID.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCID.cpp; path = /Users/melody/deve/InDesign/Sources/cc2021/XPubClient/XPubUI/source/XPBCID.cpp; sourceTree = SOURCE_ROOT; };
+		4B05EECF08840E9400D809E1 /* XPBCID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XPBCID.h; path = /Users/melody/deve/InDesign/Sources/cc2021/XPubClient/XPubUI/source/XPBCID.h; sourceTree = SOURCE_ROOT; };
+		77355572120250EF00E6FC19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../source/sdksamples/common/Info.plist; sourceTree = SOURCE_ROOT; };
+		77D687F4113861B500D56A9C /* XPubUIPlugin_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = XPubUIPlugin_release.xcconfig; sourceTree = "<group>"; };
+		7FE5845A08AD6DB8007DB654 /* XPubUIPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = XPubUIPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
+		8F4C460127B663A2007DF64F /* XPBC_frFR.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = XPBC_frFR.fr; path = source/XPBC_frFR.fr; sourceTree = "<group>"; };
+		8F4C460227B663A2007DF64F /* XPBC_enUS.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = XPBC_enUS.fr; path = source/XPBC_enUS.fr; sourceTree = "<group>"; };
+		8F4C460327B663A2007DF64F /* XPBC.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = XPBC.fr; path = source/XPBC.fr; sourceTree = "<group>"; };
+		A76918C51D7EEA3E0069B90F /* IXPubClientUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IXPubClientUtils.h; path = source/IXPubClientUtils.h; sourceTree = "<group>"; };
+		A76918C61D7EEA620069B90F /* XPBCActionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCActionComponent.cpp; path = source/XPBCActionComponent.cpp; sourceTree = "<group>"; };
+		A76918C71D7EEA620069B90F /* XPBCDocResponder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCDocResponder.cpp; path = source/XPBCDocResponder.cpp; sourceTree = "<group>"; };
+		A76918C81D7EEA620069B90F /* XPBCDocServiceProvider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCDocServiceProvider.cpp; path = source/XPBCDocServiceProvider.cpp; sourceTree = "<group>"; };
+		A76918C91D7EEA620069B90F /* XPBCFactoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPBCFactoryList.h; path = source/XPBCFactoryList.h; sourceTree = "<group>"; };
+		A76918CA1D7EEA620069B90F /* XPBCLoginDialogController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCLoginDialogController.cpp; path = source/XPBCLoginDialogController.cpp; sourceTree = "<group>"; };
+		A76918CE1D7EEA620069B90F /* XPBCSetStringCmd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCSetStringCmd.cpp; path = source/XPBCSetStringCmd.cpp; sourceTree = "<group>"; };
+		A76918CF1D7EEA620069B90F /* XPBCStartupShutdown.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCStartupShutdown.cpp; path = source/XPBCStartupShutdown.cpp; sourceTree = "<group>"; };
+		A76918D01D7EEA620069B90F /* XPBCUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCUtils.cpp; path = source/XPBCUtils.cpp; sourceTree = "<group>"; };
+		A76918F21D7EEC760069B90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/Adobe_InDesign_cc2021_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
+		A76918F41D7F04090069B90F /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = "<group>"; };
+		A7EA314A1D86AD8B002AE04A /* IAnnoncesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAnnoncesList.h; path = source/IAnnoncesList.h; sourceTree = "<group>"; };
+		A7EA31521D86AE01002AE04A /* XPBCAnnoncesPanelObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnoncesPanelObserver.cpp; path = source/XPBCAnnoncesPanelObserver.cpp; sourceTree = "<group>"; };
+		A7EA31531D86AE01002AE04A /* XPBCAnnoncesTreeViewAdapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnoncesTreeViewAdapter.cpp; path = source/XPBCAnnoncesTreeViewAdapter.cpp; sourceTree = "<group>"; };
+		A7EA31541D86AE01002AE04A /* XPBCAnnoncesTreeViewWidgetMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnoncesTreeViewWidgetMgr.cpp; path = source/XPBCAnnoncesTreeViewWidgetMgr.cpp; sourceTree = "<group>"; };
+		A7EA315E1D86E269002AE04A /* XPBCAnnonceNodeID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnonceNodeID.cpp; path = source/XPBCAnnonceNodeID.cpp; sourceTree = "<group>"; };
+		A7EA315F1D86E269002AE04A /* XPBCAnnonceNodeID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPBCAnnonceNodeID.h; path = source/XPBCAnnonceNodeID.h; sourceTree = "<group>"; };
+		A7EBB4521D8704A30040DDC3 /* XPBCAnnoncesList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnoncesList.cpp; path = source/XPBCAnnoncesList.cpp; sourceTree = "<group>"; };
+		F957084E15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
+		F957087215C90B3E00C95573 /* XPubUI.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPubUI.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F957086B15C90B3E00C95573 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F957087515C90B5100C95573 /* libPublicPlugIn.a in Frameworks */,
+				A76918F51D7F04090069B90F /* InDesignModelAndUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B05EEAD08840E8D00D809E1 = {
+			isa = PBXGroup;
+			children = (
+				4B05EEC708840E8D00D809E1 /* Source */,
+				4B05EED008840E9400D809E1 /* Resources */,
+				7F52248408AFCE1F00139994 /* xcconfig */,
+				F957084215C90B2D00C95573 /* InDesign Libraries */,
+				4B05EEBB08840E8D00D809E1 /* Products */,
+				77355572120250EF00E6FC19 /* Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		4B05EEBB08840E8D00D809E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F957087215C90B3E00C95573 /* XPubUI.InDesignPlugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B05EEC708840E8D00D809E1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A72CC9991D81A6B000F071EA /* ListePubs */,
+				A76918C51D7EEA3E0069B90F /* IXPubClientUtils.h */,
+				A76918C61D7EEA620069B90F /* XPBCActionComponent.cpp */,
+				A76918C71D7EEA620069B90F /* XPBCDocResponder.cpp */,
+				A76918C81D7EEA620069B90F /* XPBCDocServiceProvider.cpp */,
+				A76918C91D7EEA620069B90F /* XPBCFactoryList.h */,
+				A76918CA1D7EEA620069B90F /* XPBCLoginDialogController.cpp */,
+				A76918CE1D7EEA620069B90F /* XPBCSetStringCmd.cpp */,
+				A76918CF1D7EEA620069B90F /* XPBCStartupShutdown.cpp */,
+				A76918D01D7EEA620069B90F /* XPBCUtils.cpp */,
+				4B05EECB08840E9100D809E1 /* Plugin */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		4B05EECB08840E9100D809E1 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				A76918F21D7EEC760069B90F /* SDKPlugInEntrypoint.cpp */,
+				4B05EECD08840E9300D809E1 /* XPBCNoStrip.cpp */,
+				4B05EECF08840E9400D809E1 /* XPBCID.h */,
+				4B05EECE08840E9400D809E1 /* XPBCID.cpp */,
+			);
+			name = Plugin;
+			sourceTree = "<group>";
+		};
+		4B05EED008840E9400D809E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8F4C460227B663A2007DF64F /* XPBC_enUS.fr */,
+				8F4C460127B663A2007DF64F /* XPBC_frFR.fr */,
+				8F4C460327B663A2007DF64F /* XPBC.fr */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7F52248408AFCE1F00139994 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				7FE5845A08AD6DB8007DB654 /* XPubUIPlugin.xcconfig */,
+				77D687F4113861B500D56A9C /* XPubUIPlugin_release.xcconfig */,
+			);
+			name = xcconfig;
+			sourceTree = "<group>";
+		};
+		A72CC9991D81A6B000F071EA /* ListePubs */ = {
+			isa = PBXGroup;
+			children = (
+				A7EBB4521D8704A30040DDC3 /* XPBCAnnoncesList.cpp */,
+				A7EA314A1D86AD8B002AE04A /* IAnnoncesList.h */,
+				A7EA315E1D86E269002AE04A /* XPBCAnnonceNodeID.cpp */,
+				A7EA315F1D86E269002AE04A /* XPBCAnnonceNodeID.h */,
+				A7EA31521D86AE01002AE04A /* XPBCAnnoncesPanelObserver.cpp */,
+				A7EA31531D86AE01002AE04A /* XPBCAnnoncesTreeViewAdapter.cpp */,
+				A7EA31541D86AE01002AE04A /* XPBCAnnoncesTreeViewWidgetMgr.cpp */,
+			);
+			name = ListePubs;
+			sourceTree = "<group>";
+		};
+		F957084215C90B2D00C95573 /* InDesign Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F957084915C90B2D00C95573 /* For Cocoa64 */,
+			);
+			name = "InDesign Libraries";
+			sourceTree = "<group>";
+		};
+		F957084915C90B2D00C95573 /* For Cocoa64 */ = {
+			isa = PBXGroup;
+			children = (
+				A76918F41D7F04090069B90F /* InDesignModelAndUI.framework */,
+				F957084E15C90B2D00C95573 /* libPublicPlugIn.a */,
+			);
+			name = "For Cocoa64";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F957086215C90B3E00C95573 /* Release_Cocoa64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F957087015C90B3E00C95573 /* Build configuration list for PBXNativeTarget "Release_Cocoa64" */;
+			buildPhases = (
+				F957086315C90B3E00C95573 /* Sources */,
+				F957086B15C90B3E00C95573 /* Frameworks */,
+				F957086C15C90B3E00C95573 /* Rez */,
+				F957086D15C90B3E00C95573 /* Resources */,
+				F957086E15C90B3E00C95573 /* ShellScript */,
+			);
+			buildRules = (
+				F957086F15C90B3E00C95573 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = Release_Cocoa64;
+			productName = Release;
+			productReference = F957087215C90B3E00C95573 /* XPubUI.InDesignPlugin */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B05EEAF08840E8D00D809E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1310;
+			};
+			buildConfigurationList = 4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "XPubUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				fr,
+				de,
+				Base,
+				ja,
+				en,
+			);
+			mainGroup = 4B05EEAD08840E8D00D809E1;
+			productRefGroup = 4B05EEBB08840E8D00D809E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F957086215C90B3E00C95573 /* Release_Cocoa64 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F957086D15C90B3E00C95573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F4C460627B663A2007DF64F /* XPBC.fr in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		F957086C15C90B3E00C95573 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F957086E15C90B3E00C95573 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$ID_SDK_ROOT/build/mac/packagescripts/copyResources.sh\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F957086315C90B3E00C95573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7EA31601D86E269002AE04A /* XPBCAnnonceNodeID.cpp in Sources */,
+				A7EA31581D86AE01002AE04A /* XPBCAnnoncesPanelObserver.cpp in Sources */,
+				A76918D41D7EEA620069B90F /* XPBCLoginDialogController.cpp in Sources */,
+				A7EBB4531D8704A30040DDC3 /* XPBCAnnoncesList.cpp in Sources */,
+				A76918D11D7EEA620069B90F /* XPBCActionComponent.cpp in Sources */,
+				A76918D31D7EEA620069B90F /* XPBCDocServiceProvider.cpp in Sources */,
+				A76918F31D7EEC760069B90F /* SDKPlugInEntrypoint.cpp in Sources */,
+				A76918D81D7EEA620069B90F /* XPBCSetStringCmd.cpp in Sources */,
+				A76918DA1D7EEA620069B90F /* XPBCUtils.cpp in Sources */,
+				A76918D91D7EEA620069B90F /* XPBCStartupShutdown.cpp in Sources */,
+				A7EA31591D86AE01002AE04A /* XPBCAnnoncesTreeViewAdapter.cpp in Sources */,
+				A7EA315A1D86AE01002AE04A /* XPBCAnnoncesTreeViewWidgetMgr.cpp in Sources */,
+				A76918D21D7EEA620069B90F /* XPBCDocResponder.cpp in Sources */,
+				F957086615C90B3E00C95573 /* XPBCNoStrip.cpp in Sources */,
+				F957086715C90B3E00C95573 /* XPBCID.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4B05EEB108840E8D00D809E1 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE5845A08AD6DB8007DB654 /* XPubUIPlugin.xcconfig */;
+			buildSettings = {
+				BUILT_PRODUCTS_DIR = "$(ID_BUILT_SDK_SAMPLES_DIR)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS)",
+					$ID_SDK_ROOT/source/public/interfaces/tables,
+					$ID_SDK_ROOT/source/public/components/widgetbin/includes,
+					$ID_SDK_ROOT/source/public/interfaces/workgroup,
+					$ID_SDK_ROOT/source/public/interfaces/interactive,
+					$ID_SDK_ROOT/source/public/interfaces/interactive/ui,
+					$ID_SDK_ROOT/source/public/interfaces/colormgmt,
+					$ID_SDK_ROOT/source/public/interfaces/incopy,
+					$ID_SDK_ROOT/source/public/interfaces/cjk,
+					$ID_SDK_ROOT/source/public/facades/graphics,
+					$ID_SDK_ROOT/source/public/facades/text,
+					$ID_SDK_ROOT/source/public/facades/layout,
+					$ID_SDK_ROOT/source/public/components/publiclib/plugins,
+					$ID_SDK_ROOT/source/public/components/publiclib/files,
+					$ID_SDK_ROOT/source/public/components/publiclib/objectmodel,
+					$ID_SDK_ROOT/source/sdksamples/common,
+					$ID_SDK_ROOT/external/afl/includes,
+					/Users/melody/deve/InDesign/Sources/cc2021/XPubClient/XPubUI/source,
+				);
+				INFOPLIST_FILE = $ID_SDK_ROOT/source/sdksamples/common/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				PLC_OUTPUT_TYPE = InDa;
+				PRODUCT_NAME = XPubUI;
+			};
+			name = Default;
+		};
+		F957087115C90B3E00C95573 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77D687F4113861B500D56A9C /* XPubUIPlugin_release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3WBLWC32YG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS)",
+					$ID_SDK_ROOT/source/precomp/msvc,
+					$ID_SDK_ROOT/source/public/interfaces/xmedia,
+					$ID_SDK_ROOT/source/public/interfaces/preflight,
+					$ID_SDK_ROOT/source/public/interfaces/ui,
+					$ID_SDK_ROOT/source/public/interfaces/tables,
+					$ID_SDK_ROOT/source/public/interfaces/text,
+					$ID_SDK_ROOT/source/public/interfaces/graphics,
+					$ID_SDK_ROOT/source/public/components/widgetbin/includes,
+					$ID_SDK_ROOT/source/public/interfaces/workgroup,
+					$ID_SDK_ROOT/source/public/interfaces/interactive,
+					$ID_SDK_ROOT/source/public/interfaces/interactive/ui,
+					$ID_SDK_ROOT/source/public/interfaces/colormgmt,
+					$ID_SDK_ROOT/source/public/interfaces/utils,
+					$ID_SDK_ROOT/source/public/interfaces/incopy,
+					$ID_SDK_ROOT/source/public/interfaces/layout,
+					$ID_SDK_ROOT/source/public/interfaces/architecture,
+					$ID_SDK_ROOT/source/public/interfaces/cjk,
+					$ID_SDK_ROOT/source/precomp/common,
+					$ID_SDK_ROOT/source/public/includes,
+					$ID_SDK_ROOT/source/public/facades/graphics,
+					$ID_SDK_ROOT/source/public/facades/text,
+					$ID_SDK_ROOT/source/public/facades/layout,
+					$ID_SDK_ROOT/source/public/components/publiclib/plugins,
+					$ID_SDK_ROOT/source/public/components/publiclib/files,
+					$ID_SDK_ROOT/source/public/components/publiclib/objectmodel,
+					$ID_SDK_ROOT/source/sdksamples/common,
+					$ID_SDK_ROOT/external/afl/includes,
+					source,
+					../XPubConnection/source,
+				);
+				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "XPubUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B05EEB108840E8D00D809E1 /* Default */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Default;
+		};
+		F957087015C90B3E00C95573 /* Build configuration list for PBXNativeTarget "Release_Cocoa64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F957087115C90B3E00C95573 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B05EEAF08840E8D00D809E1 /* Project object */;
+}

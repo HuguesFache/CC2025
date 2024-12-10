@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9D56C021-29F9-4CFC-9889-E6A2DFABD39A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XLogin</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CAD4E60D-A33F-4560-80B0-A14B51445430</key>
+		<string>http://svn.trias.fr/cc2024/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XLogin/Core/XLogin.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CAD4E60D-A33F-4560-80B0-A14B51445430</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>CAD4E60D-A33F-4560-80B0-A14B51445430</key>
+		<string>http://svn.trias.fr/cc2024</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.trias.fr/cc2024/trunk/XLogin/Core/XLogin.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CAD4E60D-A33F-4560-80B0-A14B51445430</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CAD4E60D-A33F-4560-80B0-A14B51445430</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cc2024</string>
+		</dict>
+	</array>
+</dict>
+</plist>

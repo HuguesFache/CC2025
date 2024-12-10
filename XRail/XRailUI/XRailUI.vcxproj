@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="InDesign|x64">
+      <Configuration>InDesign</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{971A4E79-FBA2-4963-8B1E-A8A2BE1DC1B5}</ProjectGuid>
+    <RootNamespace>XRailUI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="XRLUIReleaseX64.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="XRLUIReleaseX64.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\objDx64\XRailUI\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\objDx64\XRailUI\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\tmp\XRailUI\indesignCC2024\64\</IntDir>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">.pln</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">
+    <SourcePath>C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>$(IntDir)XRailUI.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;DEBUG;STRICT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>VCPlugInHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)XRailUI/XRailUI.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>merge_res.cmd "$(IntDir)"  XRLUI &amp; del /f /s "$(TargetDir)($(TargetName) Resources)\"*.idrc &amp; xcopy /E "$(IntDir)"*.idrc "$(TargetDir)($(TargetName) Resources)\" /Y</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>$(ID_SDK_DIR)\build\win\objdx64\PMRuntime.lib;$(ID_SDK_DIR)\build\win\objdx64\Public.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\debugx64\sdk\XRailUI.pln</OutputFile>
+      <ProgramDatabaseFile>.\debugx64\sdk\XRailUI.pdb</ProgramDatabaseFile>
+      <ImportLibrary>.\objDx64\XRailUI/XRailUI.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>restore_res.cmd "$(IntDir)"  XRLUI</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>$(IntDir)XRailUI.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>VCPlugInHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)XRailUI.pch</PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories>..\..\XRailClient\XRailClient\source</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>merge_res.cmd "$(IntDir)"  XRLUI &amp;del /f /s "$(TargetDir)($(TargetName) Resources)\"*.idrc &amp; xcopy /E "$(IntDir)"*.idrc "$(TargetDir)($(TargetName) Resources)\" /Y</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>$(UI_PLUGIN_LINKLIST);$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib;$(ID_SDK_DIR)\external\dva\third_party\boost_libraries\bin.v2\libs\boost_regex\lib\win\release\64\boost_regex.lib;$(ID_SDK_DIR)\external\icu\libs\win\releasex64\icucnv.lib;$(ID_SDK_DIR)\build\win\objrx64\ASLSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\XRailUI.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\XRailUI\indesignCC2024\64\XRailUI.pdb</ProgramDatabaseFile>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>C:\tmp\XRailUI\indesignCC2024\64\XRailUI.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>restore_res.cmd "$(IntDir)"  XRLUI</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\XRail\source\DocUtils.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
+    <ClCompile Include="source\XRailActionComponent.cpp" />
+    <ClCompile Include="source\XRailChangeStateDialogController.cpp" />
+    <ClCompile Include="source\XRailLinkerDialogController.cpp" />
+    <ClCompile Include="source\XRailLoginDialogController.cpp" />
+    <ClCompile Include="source\XRailOpenLoginDialogCmd.cpp" />
+    <ClCompile Include="source\XRailPrefsDialogController.cpp" />
+    <ClCompile Include="source\XRailUIStartupShutdown.cpp" />
+    <ClCompile Include="source\XRLUIIntList.cpp" />
+    <ClCompile Include="source\XRLUILinkerDialogObserver.cpp" />
+    <ClCompile Include="source\TriggerResourceDeps.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="source\XRLUIID.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="source\XRLUINoStrip.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">/vmg %40"XRailUIcpp.rsp" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\XRail\source\DocUtils.h" />
+    <ClInclude Include="source\IIntList.h" />
+    <ClInclude Include="source\XRLUIFactoryList.h" />
+    <ClInclude Include="source\XRLUIID.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="source\XRLUI.fr">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">odfrc "%(FullPath)" -o "$(IntDir)%(Filename).fres" -d DEBUG  -i "source" %40"XRailUIodfrc.rsp"
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)TriggerResourceDeps.obj;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).fres;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">odfrc "%(FullPath)" -o "$(IntDir)%(Filename).fres"   -i "source" %40"XRailUIodfrc.rsp
+</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">$(IntDir)TriggerResourceDeps.obj;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">$(IntDir)%(Filename).fres;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="source\XRLUI_enUS.fr" />
+    <None Include="source\XRLUI_frFR.fr" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="source\XRLUI.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">0x0809</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">source;source;$(ID_SDK_DIR)\source\precomp\msvc;$(ID_SDK_DIR)\source\public\includes;$(ID_SDK_DIR)\source\sdksamples\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">0x0809</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">source;source;$(ID_SDK_DIR)\source\precomp\msvc;$(ID_SDK_DIR)\source\public\includes;$(ID_SDK_DIR)\source\sdksamples\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

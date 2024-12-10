@@ -1,0 +1,1085 @@
+//========================================================================================
+//  
+//  $File: $
+//  
+//  Owner: Guillaume
+//  
+//  $Author: $
+//  
+//  $DateTime: $
+//  
+//  $Revision: $
+//  
+//  $Change: $
+//  
+//  Copyright 1997-2005 Adobe Systems Incorporated. All rights reserved.
+//  
+//  NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance 
+//  with the terms of the Adobe license agreement accompanying it.  If you have received
+//  this file from a source other than Adobe, then your use, modification, or 
+//  distribution of it requires the prior written permission of Adobe.
+//  
+//========================================================================================
+
+#include "VCPlugInHeaders.h"
+
+// General includes:
+#include "MenuDef.fh"
+#include "ActionDef.fh"
+#include "ActionDefs.h"
+#include "AdobeMenuPositions.h"
+#include "LocaleIndex.h"
+#include "PMLocaleIds.h"
+#include "StringTable.fh"
+#include "ObjectModelTypes.fh"
+#include "ShuksanID.h"
+#include "ActionID.h"
+#include "CommandID.h"
+#include "WorkspaceID.h"
+#include "WidgetID.h"
+#include "BuildNumber.h"
+#include "PanelList.fh"
+#include "SplineID.h"
+
+#include "InterfaceColorDefines.h"
+#include "IControlViewDefs.h"
+#include "SysControlIDs.h"
+#include "Widgets.fh"	// for PalettePanelWidget or DialogBoss
+
+#include "PlugInModel_UIAttributes.h"
+#include "DragDropID.h"
+#include "PageItemScrapID.h"
+#include "GenericID.h"
+#include "LayoutUIID.h"
+#include "TreeViewDefs.h"
+
+// Project includes:
+#include "XPBCID.h"
+//#include "XPBOID.h"
+
+#ifdef __ODFRC__
+
+/*  Plugin version definition.
+*/
+resource PluginVersion (kSDKDefPluginVersionResourceID)
+{
+	kTargetVersion,
+	kXPBCPluginID,
+	kSDKDefPlugInMajorVersionNumber, kSDKDefPlugInMinorVersionNumber,
+	kSDKDefHostMajorVersionNumber, kSDKDefHostMinorVersionNumber,
+	kXPBCCurrentMajorFormatNumber, kXPBCCurrentMinorFormatNumber,
+	{ kInDesignProduct, kInCopyProduct },
+	{ kWildFS },
+	kUIPlugIn,
+	kXPBCVersion
+};
+
+/*  The ExtraPluginInfo resource adds extra information to the Missing Plug-in dialog
+	that is popped when a document containing this plug-in's data is opened when
+	this plug-in is not present. These strings are not translatable strings
+	since they must be available when the plug-in isn't around. They get stored
+	in any document that this plug-in contributes data to.
+*/
+resource ExtraPluginInfo(1)
+{
+	kXPBCCompanyValue,			// Company name
+	kXPBCMissingPluginURLValue,	// URL 
+	kXPBCMissingPluginAlertValue,	// Missing plug-in alert text
+};
+
+/*
+// This is where we define we require the library plug-ins:
+*/
+/*
+resource PluginDependency(kSDKDefPluginDependencyResourceID)
+{
+	kWildFS
+	{
+		kXPBOPluginID,kXPBOPluginName,kSDKDefPlugInMajorVersionNumber,kSDKDefPlugInMinorVersionNumber,
+	}
+}
+*/
+
+resource ImplementationAlias(1) 
+{ 
+	{ 
+		kXPBCIPServerImpl,	kStringDataImpl,
+		kXPBCUserNameImpl,	kStringDataImpl,
+		kXPBCPersistPubIDImpl, kPersistStringDataImpl,
+		kXPBCPersistPubPreviewImpl, kPersistStringDataImpl,
+		kXPBStylePDFImpl, kStringDataImpl,
+		kXPBCPubPersistBatImpl, kPersistStringDataImpl,
+	} 
+}; 
+
+resource IgnoreTags(1)
+{
+	kImplementationIDSpace,
+	{
+		kXPBCPersistPubIDImpl,			
+		kXPBCPersistPubPreviewImpl,
+		kXPBCPubPersistBatImpl,
+	}
+};
+
+/* Boss class definition.
+*/
+resource ClassDescriptionTable(kSDKDefClassDescriptionTableResourceID)
+{{{
+	
+	/**
+	 This boss class supports two interfaces:
+	 IActionComponent and IPMPersist.
+
+	 
+	 @ingroup xpubclient
+	*/
+	Class
+	{
+		kXPBCActionComponentBoss,
+		kInvalidClass,
+		{
+			/** Handle the actions from the menu. */
+			IID_IACTIONCOMPONENT, kXPBCActionComponentImpl,
+			/** Persist the state of the menu across application instantiation.
+			Implementation provided by the API.*/
+			IID_IPMPERSIST, kPMPersistImpl
+		}
+	},
+
+	/**
+		 This boss class inherits from an API panel boss class, and
+		 adds an interface to control a pop-up menu on the panel.
+		 The implementation for this interface is provided by the API.
+
+		 
+		 @ingroup xpubclient
+	*/
+
+	/**
+		Ce boss permet de detecter les evenements concernant les documents
+	*/
+	Class
+	{
+		kXPBCDocEventBoss,
+		kInvalidClass,
+		{
+			// Register panels with the application. 
+			IID_IRESPONDER, kXPBCDocResponderImpl,
+			// Identify this boss as a panel register service.
+			// Implementation provided by the API.
+			IID_IK2SERVICEPROVIDER, kXPBCDocServiceProviderImpl,
+		}
+	},
+	
+	/** Service provider boss class to install the idle task on startup */
+	Class
+	{
+		kXPBCStartupShutdownBoss,
+		kInvalidClass,
+		 {
+				/** Implementation of IStartupShutdownService that installs idle task on startup */
+				IID_ISTARTUPSHUTDOWN, kXPBCStartupShutdownImpl,
+				/** identify the service type */
+				IID_IK2SERVICEPROVIDER, kCStartupShutdownProviderImpl,
+		 }
+	},
+	
+	/** AddIn for storing XPubClient session data */
+	AddIn
+	{
+		kSessionBoss,
+		kInvalidClass,
+		{			
+			// Ajout de l'interface BoolData
+			IID_IBOOL_LOGIN, kBoolDataImpl,
+			
+			// Ajout de l'interface StringData
+			IID_ISTRINGDATA_IPSERVEUR, kXPBCIPServerImpl,
+			IID_ISTRINGDATA_USERNAME, kXPBCUserNameImpl,
+			IID_ISTRINGDATA_STYLEPDF, kXPBStylePDFImpl,
+		}
+	},
+	
+	/** AddIn for storing pub ID in documents as well as preview path */
+	AddIn
+	{
+		kDocBoss,
+		kInvalidClass,
+		{			
+			IID_IPUB_ID, kXPBCPersistPubIDImpl,			
+			IID_IPUB_PREVIEW, kXPBCPersistPubPreviewImpl,
+			IID_IPUB_BAT, kXPBCPubPersistBatImpl, 		
+		}
+	},	
+	
+	/** AddIn for storing persistently pub ID in text frame */
+	AddIn
+	{
+		kSplineItemBoss,
+		kInvalidClass,
+		{		
+			IID_IPUB_ID, kXPBCPersistPubIDImpl,		
+		}
+	},	
+	
+	/** AddIn for utilities functions dedicated to XPubClient
+	*/
+	AddIn
+	{
+		kUtilsBoss,
+		kInvalidClass,
+		{
+			IID_IXPUBCLIENTUTILS , kXPBCUtilsImpl,
+		}
+	},
+	
+	/** Command for setting persistent string data on any boss
+	*/
+	Class
+	{
+		kXPBCSetStringCmdBoss,
+		kInvalidClass,
+		{
+			IID_ICOMMAND, kXPBCSetStringCmdImpl,
+			
+			IID_ISTRINGDATA, kStringDataImpl, // Data string to set
+			
+			IID_IINTDATA, kIntDataImpl, // ID of targeted string data interface 
+		}
+	},
+	
+	Class
+	{
+		kXPBCAnnoncesPanelWidgetBoss,
+		kPalettePanelWidgetBoss,
+		{
+			/** The plug-in's implementation of ITextControlData with an exotic IID of IID_IPANELMENUDATA.
+			Implementation provided by the API.
+			*/
+			IID_IPANELMENUDATA, kCPanelMenuDataImpl,
+			
+			IID_IOBSERVER, kXPBCAnnoncesPanelObserverImpl,
+		}
+	},
+
+    /** Override pub list widget to provide drag source capabilities
+	*/
+	Class
+	{
+		kXPBCAnnoncesBoxWidgetBoss,
+		kTreeViewWidgetBoss,
+		{
+			/** Furnishes application framework with widgets as needed */
+			IID_ITREEVIEWWIDGETMGR, kXPBCAnnoncesTVWidgetMgrImpl,
+			/** Adapts our data model to the needs of the application framework */
+			IID_ITREEVIEWHIERARCHYADAPTER, kXPBCAnnoncesTreeViewAdapterImpl,
+			
+			/** Store internally resa pub marbre list */
+			IID_IANNONCESLIST, kXPBCAnnoncesListImpl,
+		}
+	},
+    
+    Class
+	{
+		kXPBCAnnoncesNodeWidgetBoss,
+		kTreeNodeWidgetBoss,
+		{			 
+		
+		}
+	},
+	/**
+	 This boss class implements the dialog for this plug-in. All
+	 dialogs must implement IDialogController. Specialisation of 
+	 IObserver is only necessary if you want to handle widget 
+	 changes dynamically rather than just gathering their values 
+	 and applying in the IDialogController implementation.
+	 In this implementation IObserver is specialised so that the 
+	 plug-in's about box is popped when the info button widget 
+	 is clicked.
+	*/
+	Class
+	{
+		kXPBCLoginDialogBoss,
+		kDialogBoss,
+		{
+			/** Provides management and control over the dialog. 
+			*/
+			IID_IDIALOGCONTROLLER, kXPBCLoginDialogControllerImpl,
+		}
+	},
+	
+	
+}}};
+
+/*  Implementation definition.
+*/
+resource FactoryList (kSDKDefFactoryListResourceID)
+{
+	kImplementationIDSpace,
+	{
+		#include "XPBCFactoryList.h"
+	}
+};
+
+
+/*  Menu definition.
+*/
+resource MenuDef (kSDKDefMenuResourceID)
+{
+	{
+		// The About Plug-ins sub-menu item for this plug-in.
+		kXPBCAboutActionID,			// ActionID (kInvalidActionID for positional entries)
+		kXPBCAboutMenuPath,			// Menu Path.
+		kSDKDefAlphabeticPosition,			// Menu Position.
+		kSDKDefIsNotDynamicMenuFlag,		// kSDKDefIsNotDynamicMenuFlag or kSDKDefIsDynamicMenuFlag
+		
+		// About this plugin submenu for the popup menu on the panel
+		kXPBCPopupAboutThisActionID,
+		kXPBCTargetMenuPath
+		kXPBCAboutThisMenuItemPosition,
+		kSDKDefIsNotDynamicMenuFlag,
+	}
+};
+
+/* Action definition.
+*/
+resource ActionDef (kSDKDefActionResourceID)
+{
+	{
+		kXPBCActionComponentBoss, 		// ClassID of boss class that implements the ActionID.
+		kXPBCAboutActionID,	// ActionID.
+		kXPBCAboutMenuKey,	// Sub-menu string.
+		kOtherActionArea,				// Area name (see ActionDefs.h).
+		kNormalAction,					// Type of action (see ActionDefs.h).
+		kDisableIfLowMem,				// Enabling type (see ActionDefs.h).
+		kInvalidInterfaceID,			// Selection InterfaceID this action cares about or kInvalidInterfaceID.
+		kSDKDefInvisibleInKBSCEditorFlag, // kSDKDefVisibleInKBSCEditorFlag or kSDKDefInvisibleInKBSCEditorFlag.
+
+
+		kXPBCActionComponentBoss,
+		kXPBCPopupAboutThisActionID,
+		kXPBCAboutMenuKey,	// Key to the name of this action
+		kOtherActionArea,
+		kNormalAction,
+		kDisableIfLowMem,
+		kInvalidInterfaceID,
+		kSDKDefInvisibleInKBSCEditorFlag,
+
+
+
+	}
+};
+
+
+/*  LocaleIndex
+	The LocaleIndex should have indicies that point at your
+	localizations for each language system that you are localized for.
+*/
+/*  String LocaleIndex.
+*/
+resource LocaleIndex ( kSDKDefStringsResourceID)
+{
+	kStringTableRsrcType,
+	{
+		kWildFS, k_enUS, kSDKDefStringsResourceID + index_frFR
+		kWildFS, k_enGB, kSDKDefStringsResourceID + index_frFR
+		kWildFS, k_deDE, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_frFR, kSDKDefStringsResourceID + index_frFR
+		kWildFS, k_esES, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_ptBR, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_svSE, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_daDK, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_nlNL, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_itIT, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_nbNO, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_fiFI, kSDKDefStringsResourceID + index_enUS
+		kInDesignJapaneseFS, k_jaJP, kSDKDefStringsResourceID + index_enUS
+	}
+};
+
+resource LocaleIndex (kSDKDefStringsNoTransResourceID)
+{
+	kStringTableRsrcType,
+	{
+		kWildFS, k_Wild, kSDKDefStringsNoTransResourceID + index_enUS
+	}
+};
+
+resource StringTable (kSDKDefStringsNoTransResourceID + index_enUS)
+{
+	k_enUS,									// Locale Id
+	kEuropeanMacToWinEncodingConverter,		// Character encoding converter
+	{
+		// No-Translate strings go here:
+
+		kXPBCInternalPopupMenuNameKey,	kXPBCInternalPopupMenuNameKey,		// No need to translate, internal menu name.
+	}
+};
+
+/*  Panel LocaleIndex.
+*/
+resource LocaleIndex (kSDKDefPanelResourceID)
+{
+	kViewRsrcType,
+	{
+		kWildFS, k_Wild, 	kSDKDefPanelResourceID + index_enUS
+	}
+};
+/*
+// ------------Resa Pub Panel resources.--------------
+*/
+resource PNGA(kXPBCIconConnectResID) "connect.png"
+resource PNGA(kXPBCIconDisconnectResID) "disconnect.png"
+resource PNGA(kXPBCIconRequestResID) "request.png"
+resource PNGA(kXPBCIconOpenResID) "folder.png"
+resource PNGA(kXPBCIconSaveResID) "save.png"
+resource PNGA(kXPBCIconSaveCloseResID) "saveclose.png"
+resource PNGA(kXPBCIconBatResID) "bat.png"
+resource PNGA(kXPBCIconTerminateResID) "terminate.png"
+resource PNGA(kXPBCIconSearchResID) "search.png"
+resource PNGA(kXPBCIconClientNameResID) "customer.png"
+resource PNGA(kXPBCIconAdressResID) "adress.png"
+resource PNGA(kXPBCIconTelResID) "tel.png"
+resource PNGA(kXPBCIconPortResID) "portable.png"
+resource PNGA(kXPBCIconEmailResID) "mail.png"
+resource PNGA(kXPBCIconWidthResID) "width.png"
+resource PNGA(kXPBCIconHeightResID) "height.png"
+resource PNGA(kXPBCIconOpenPubFolderResID) "showdir.png"
+
+/*  PanelList definition.
+*/
+resource PanelList (kSDKDefPanelResourceID)
+{
+	{
+		// 1st panel in the list
+		kXPBCAnnoncesBoxResourceID,			// Resource ID for this panel (use SDK default rsrc ID)
+		kXPBCPluginID,						// ID of plug-in that owns this panel
+		kNotResizable,
+		kXPBCAnnoncesPanelWidgetActionID,	// Action ID to show/hide the panel
+		kXPBCPanelTitleKey,			// Shows up in the Window list.
+		"",									// Alternate menu path of the form "Main:Foo" if you want your palette menu item in a second place
+		0.0,								// Alternate Menu position Alternate Menu position for determining menu order
+		0,0,								// Rsrc ID, Plugin ID for a PNG icon resource to use for this palette
+		c_Panel
+	}
+};
+
+/*  Panel LocaleIndex.
+*/
+resource LocaleIndex (kXPBCAnnoncesBoxResourceID)
+{
+	kViewRsrcType,
+	{
+		kWildFS, k_Wild, kXPBCAnnoncesBoxResourceID + index_enUS
+	}
+};
+
+
+/*  Type definition.
+*/
+type XPBCAnnoncesPanelWidget(kViewRsrcType) : PalettePanelWidget(ClassID = kXPBCAnnoncesPanelWidgetBoss)
+{
+	CPanelMenuData;
+};
+
+/*
+*/
+type XPBCAnnoncesBoxWidget(kViewRsrcType) : TreeViewWidget(ClassID = kXPBCAnnoncesBoxWidgetBoss)
+{
+};
+
+type XPBCAnnoncesNodeWidget(kViewRsrcType) : PrimaryResourcePanelWidget(ClassID = kXPBCAnnoncesNodeWidgetBoss) 
+{};
+
+/*  PanelView definition.
+The view is not currently localised: therefore, it can reside here.
+However, if you wish to localise it, it is recommended to locate it in one of
+the localised framework resource files (i.e. XPBC_enUS.fr etc.).
+*/
+resource XPBCAnnoncesPanelWidget (kXPBCAnnoncesBoxResourceID + index_enUS) 
+{ 
+	__FILE__, 
+	__LINE__, // Localization macro
+	kXPBCAnnoncesPanelWidgetID, // WidgetID
+	kPMRsrcID_None, // RsrcID
+	kBindNone, // Binding (0=none)
+	Frame(0, 0, 288, 375)				// Frame: left, top, right, bottom.
+	kTrue,
+	kTrue, // Visible, Enabled
+	kFalse, // Erase background
+	kInterfacePaletteFill, // Erase to color
+	kFalse, // Draw dropshadow
+	kXPBCPanelTitleKey, // Panel name
+	{
+		StaticTextWidget
+		(
+			kXPBCUsernameLblWidgetID,		// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			Frame(5, 10, 150, 27)			// Frame: left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			kXPBCNotConnectedStringKey,		// Initial text.
+			0								// No associated widget
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnConnect,	// widget ID
+			kXPBCIconConnectResID,		// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			Frame(5, 30, 35, 60)			// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnDisconnect,// widget ID
+			kXPBCIconDisconnectResID,	// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			5, 60, 5+30, 60+30,			// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnRequest,	// widget ID
+			kXPBCIconRequestResID,		// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			255, 30, 255+30, 30+30,		// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnOpen,		// widget ID
+			kXPBCIconOpenResID,			// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			5, 95, 5+30, 95+30,			// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnSave,		// widget ID
+			kXPBCIconSaveResID,			// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			35, 95, 35+30, 95+30,		// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnSaveClose,	// widget ID
+			kXPBCIconSaveCloseResID,	// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			65, 95, 65+30, 95+30,		// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnBat,		// widget ID
+			kXPBCIconBatResID,			// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			110, 95, 110+30, 95+30,		// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnTerminate,		// widget ID
+			kXPBCIconTerminateResID,			// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			140, 95, 140+30, 95+30,		// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnOpenPubFolder,		// widget ID
+			kXPBCIconOpenPubFolderResID,			// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			250, 95, 250+30, 95+30,		// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),		
+
+        XPBCAnnoncesBoxWidget
+		( 
+			kXPBCAnnoncesBoxWidgetID, // WidgetId
+			kPMRsrcID_None, // RsrcId
+			kBindAll, // Frame binding
+			Frame(5, 130, 280, 250) // Frame
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kTrue, // EraseBeforeDraw
+			kInterfacePaletteFill, // InterfaceColor
+			"", 
+			kHideRootNode | kDrawEndLine, // Options. Display root node
+			kFalse, 
+			kTrue, // Has scroll bar (h,v)
+			20, // fVScrollButtonIncrement
+			20, // fVThumbScrollIncrement
+			0, // fHScrollButtonIncrement
+			0, // fHThumbScrollIncrement
+			1, // Items selectable, 0 = No Selection, 1 = Single Selection, 2 = Multiple Selection
+			kFalse, // Allow children from multiple parents to be selected
+			kFalse, // Allow discontiguous selection
+			{
+			//The tree view is dynamically created.
+			} 
+		),
+		DropDownListWidget
+		(
+			kWidgetID_PopTitre,					// WidgetId
+			kSysDropDownPMRsrcId,  				// RsrcId
+			kBindLeft | kBindRight | kBindTop,	// Frame binding
+			40, 30, 150, 45,		 			// left, top, right, bottom
+			kTrue, kFalse,                      // Visible, Enabled
+			{{									// initial text
+				kXPBCStringKey_EVERYTITLES,
+			}}
+		),
+		DropDownListWidget
+		(
+			kWidgetID_PopEdition,				// WidgetId
+			kSysDropDownPMRsrcId,  				// RsrcId
+			kBindLeft | kBindRight | kBindTop,	// Frame binding
+			40, 50, 150, 65,					// left, top, right, bottom
+			kTrue, kFalse,                      // Visible, Enabled
+			{{									// initial text
+				kXPBCStringKey_EVERYEDITIONS,
+			}}
+		),
+		DropDownListWidget
+		(
+			kWidgetID_PopEtatPub,				// WidgetId
+			kSysDropDownPMRsrcId,  				// RsrcId
+			kBindLeft | kBindRight | kBindTop,	// Frame binding
+			160, 30, 248, 45,	 				// left, top, right, bottom
+			kTrue, kFalse,                      // Visible, Enabled
+			{{									// initial text
+				kXPBCStringKey_EVERYSTATUS,
+			}}
+		),
+		DropDownListWidget
+		(
+			kWidgetID_PopDateParuDeb,			// WidgetId
+			kSysDropDownPMRsrcId,  				// RsrcId
+			kBindLeft | kBindRight | kBindTop,	// Frame binding
+			160, 50, 248, 65,	 				// left, top, right, bottom
+			kTrue, kFalse,                      // Visible, Enabled
+			{{									// initial text
+			}}
+		),
+		DropDownListWidget
+		(
+			kWidgetID_PopDateParuFin,			// WidgetId
+			kSysDropDownPMRsrcId,  				// RsrcId
+			kBindLeft | kBindRight | kBindTop,	// Frame binding
+			160, 70, 248, 85, 					// left, top, right, bottom
+			kTrue, kFalse,                      // Visible, Enabled
+			{{									// initial text
+			}}
+		),
+		TextEditBoxWidget
+		(
+			kSIDPubEdtWidgetID,						// WidgetId
+			kSysEditBoxPMRsrcId,					// RsrcId
+			kBindNone,								// Frame binding
+			40, 70, 130, 87,						// left, top, right, bottom
+			kTrue, kTrue,							// Visible, Enabled
+			0,										// widget id of nudge button			
+			0,	0,									// small/large nudge amount
+			32,										// max num chars( 0 = no limit)
+			kFalse,									// is read only
+			kFalse,									// should notify each key stroke
+			kFalse,									// range checking enabled
+			kFalse,									// blank entry allowed
+			0, 0,									// upper/lower bounds
+			""										// initial text
+		),
+		RollOverIconButtonWidget
+		(
+			kXPBCWidgetID_BtnSearch,	// widget ID
+			kXPBCIconSearchResID,		// resource ID
+			kXPBCPluginID,				// plugin ID
+			kBindNone,					// frame binding
+			132, 68, 132+20, 68+20,		// left, top, right, bottom
+			kTrue, kTrue,				// visible, enabled
+			kADBEIconSuiteButtonType	// associated widget
+		),
+		IconSuiteWidget
+		(
+			kInvalidWidgetID, 				// WidgetId
+			kXPBCIconClientNameResID, 		// RsrcId
+			kXPBCPluginID,					
+			kBindNone,					
+			14, 255, 14+16, 255+16,		
+			kTrue, kTrue,					// Visible, Enabled,
+			kADBEIconSuiteButtonType,
+			0, 
+		),
+		StaticTextWidget
+		(
+			kWidgetID_LblClientName,		// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			35, 255, 210, 255+17,			// left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			"",								// Initial text.
+			0								// No associated widget
+		),
+		IconSuiteWidget
+		(
+			kInvalidWidgetID, 				// WidgetId
+			kXPBCIconAdressResID, 			// RsrcId
+			kXPBCPluginID,					
+			kBindNone,					
+			14, 275, 14+16, 275+16,		
+			kTrue, kTrue,					// Visible, Enabled,
+			kADBEIconSuiteButtonType,
+			0, 
+		),
+		StaticTextWidget
+		(
+			kWidgetID_LblAdress,			// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			35, 275, 210, 275+17,			// left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			"",								// Initial text.
+			0								// No associated widget
+		),
+		IconSuiteWidget
+		(
+			kInvalidWidgetID, 				// WidgetId
+			kXPBCIconTelResID, 				// RsrcId
+			kXPBCPluginID,					
+			kBindNone,					
+			14, 295, 14+16, 295+16,		
+			kTrue, kTrue,					// Visible, Enabled,
+			kADBEIconSuiteButtonType,
+			0, 
+		),
+		StaticTextWidget
+		(
+			kWidgetID_LblTel,				// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			35, 295, 210, 295+17,			// left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			"",								// Initial text.
+			0								// No associated widget
+		),
+		IconSuiteWidget
+		(
+			kInvalidWidgetID, 				// WidgetId
+			kXPBCIconPortResID, 			// RsrcId
+			kXPBCPluginID,					
+			kBindNone,					
+			14, 315, 14+16, 315+16,		
+			kTrue, kTrue,					// Visible, Enabled,
+			kADBEIconSuiteButtonType,
+			0, 
+		),
+		StaticTextWidget
+		(
+			kWidgetID_LblPort,				// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			35, 315, 210, 315+17,			// left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			"",								// Initial text.
+			0								// No associated widget
+		),
+		IconSuiteWidget
+		(
+			kInvalidWidgetID, 				// WidgetId
+			kXPBCIconEmailResID, 			// RsrcId
+			kXPBCPluginID,					
+			kBindNone,					
+			14, 335, 14+16, 335+16,		
+			kTrue, kTrue,					// Visible, Enabled,
+			kADBEIconSuiteButtonType,
+			0, 
+		),
+		StaticTextWidget
+		(
+			kWidgetID_LblEmail,				// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			35, 335, 210, 335+17,			// left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			"",								// Initial text.
+			0								// No associated widget
+		),
+		IconSuiteWidget
+		(
+			kInvalidWidgetID, 				// WidgetId
+			kXPBCIconWidthResID, 			// RsrcId
+			kXPBCPluginID,					
+			kBindNone,					
+			14, 355, 14+16, 355+16,		
+			kTrue, kTrue,					// Visible, Enabled,
+			kADBEIconSuiteButtonType,
+			0, 
+		),
+		StaticTextWidget
+		(
+			kWidgetID_LblWidth,				// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			35, 355, 35+100, 355+17,		// left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			"",								// Initial text.
+			0								// No associated widget
+		),
+		IconSuiteWidget
+		(
+			kInvalidWidgetID, 				// WidgetId
+			kXPBCIconHeightResID, 			// RsrcId
+			kXPBCPluginID,					
+			kBindNone,					
+			139, 355, 139+16, 355+16,		
+			kTrue, kTrue,					// Visible, Enabled,
+			kADBEIconSuiteButtonType,
+			0, 
+		),
+		StaticTextWidget
+		(
+			kWidgetID_LblDepth,				// WidgetId (default=0)
+			kSysStaticTextPMRsrcId,			// RsrcId
+			kBindNone,						// Frame binding
+			160, 355, 160+100, 355+17,		// left, top, right, bottom.
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			"",								// Initial text.
+			0								// No associated widget
+		),
+	}
+
+	kXPBCInternalPopupMenuNameKey		// Popup menu name (internal)
+};
+
+resource LocaleIndex (kXPBCAnnoncesNodeWidgetRsrcID)
+{
+	kViewRsrcType,
+	{
+		kWildFS, k_Wild, 	kXPBCAnnoncesNodeWidgetRsrcID + index_enUS
+	}
+};
+
+resource XPBCAnnoncesNodeWidget (kXPBCAnnoncesNodeWidgetRsrcID + index_enUS) 
+{ 
+	__FILE__,
+	__LINE__, 
+	kXPBCAnnoncesParentWidgetId, 
+	0, // WidgetId, RsrcId
+	kXPBCPluginID,
+	kBindLeft | kBindRight, // Frame binding
+	Frame(1,1,274,21) // Frame
+	kTrue, 
+	kTrue, // Visible, Enabled
+	"", // Panel name
+	{
+		InfoStaticTextWidget 
+		( 
+			kXPBCAnnoncesColIDWidgetID, // WidgetId
+			kPMRsrcID_None, // RsrcId
+			kBindLeft | kBindRight, // Frame binding
+			Frame(2,0,80,18) // Frame
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kAlignLeft, // Alignment
+			kDontEllipsize, // Ellipsize style
+			kTrue,
+			"", // Text Control Data
+			0, // WidgetId for associated control for shortcut focus
+			kPaletteWindowSystemScriptFontId, 
+			kPaletteWindowSystemScriptFontId,
+		),
+		InfoStaticTextWidget 
+		( 
+			kXPBCAnnoncesColStatusWidgetID, // WidgetId
+			kPMRsrcID_None, // RsrcId
+			kBindLeft | kBindRight, // Frame binding
+			Frame(80, 0, 160,18) // Frame
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kAlignLeft, // Alignment
+			kDontEllipsize, // Ellipsize style
+			kTrue,
+			"", // Text Control Data
+			0, // WidgetId for associated control for shortcut focus
+			kPaletteWindowSystemScriptFontId, 
+			kPaletteWindowSystemScriptFontId,
+		),
+		InfoStaticTextWidget 
+		( 
+			kXPBCAnnoncesColNameWidgetID, // WidgetId
+			kPMRsrcID_None, // RsrcId
+			kBindLeft | kBindRight, // Frame binding
+			Frame(160,0,275,18) // Frame
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kAlignLeft, // Alignment
+			kDontEllipsize, // Ellipsize style
+			kTrue,
+			"", // Text Control Data
+			0, // WidgetId for associated control for shortcut focus
+			kPaletteWindowSystemScriptFontId, 
+			kPaletteWindowSystemScriptFontId,
+		),	
+    }
+};
+
+// ------------------------------------------------------------------------------------------
+// Dialogue Login
+// ------------------------------------------------------------------------------------------
+
+/*
+// Type definition.
+*/
+type XPBCLoginDialogWidget(kViewRsrcType) : DialogBoss(ClassID = kXPBCLoginDialogBoss)
+{
+};
+
+type XPBCPasswordEditBoxWidget(kViewRsrcType) : TextEditBoxWidget(ClassID = kPasswordEditBoxWidgetBoss)
+{
+};
+
+/*
+// Dialog definition.
+// This view is not localised: therefore, it can reside here.
+// However, if you wish to localise it, it is recommended to locate it in one of 
+// the localised framework resource files (i.e. BscDlg_enUS.fr etc.) and 
+// update your Dialog LocaleIndex accordingly.
+*/
+#define kLoginDialogWidth       310
+#define kLoginDialogHeight      110
+resource XPBCLoginDialogWidget (kXPBCLoginDialogResourceID + index_enUS)
+{
+	__FILE__, __LINE__,
+	kXPBCLoginDialogWidgetID,									// WidgetID
+	kPMRsrcID_None,												// RsrcID
+	kBindNone,													// Binding
+	0, 0, kLoginDialogWidth, kLoginDialogHeight,				// Frame (l,t,r,b)
+	kTrue, kTrue,												// Visible, Enabled
+	kXPBCLoginDialogTitleKey,									// Dialog name
+	{
+		DefaultButtonWidget
+		(
+			kOKButtonWidgetID,		// WidgetID 
+			kSysButtonPMRsrcId,		// RsrcID
+			kBindNone,				// Binding
+			kLoginDialogWidth-(16+80), 30, kLoginDialogWidth-16, 30+20,	// Frame (l,t,r,b)
+			kTrue, kTrue,			// Visible, Enabled
+			kSDKDefOKButtonApplicationKey,	// Button text
+		),
+		CancelButtonWidget				
+		(
+			kCancelButton_WidgetID,	// WidgetID
+			kSysButtonPMRsrcId,		// RsrcID
+			kBindNone,				// Binding
+			kLoginDialogWidth-(16+80), 30+20+10, kLoginDialogWidth-16, 30+20+10+20,	// Frame (l,t,r,b)
+			kTrue, kTrue,			// Visible, Enabled
+			kSDKDefCancelButtonApplicationKey,	// Button name
+			kTrue,					// Change to Reset on option-click.
+		),		
+		StaticTextWidget
+		(
+			kInvalidWidgetID,				// widget ID
+			kSysStaticTextPMRsrcId,			// PMRsrc ID
+			kBindNone,						// frame binding
+			10, 10, 200, 25,				// left, top, right, bottom
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			kLoginUserLblStringKey,			// Initial text.
+			0								// No associated widget
+		),
+		TextEditBoxWidget
+		(
+			kLoginUserEdtWidgetID,					// WidgetId
+			kSysEditBoxPMRsrcId,					// RsrcId
+			kBindNone,								// Frame binding
+			10, 30, 200, 50,						// left, top, right, bottom
+			kTrue, kTrue,							// Visible, Enabled
+			0,										// widget id of nudge button			
+			0,	0,									// small/large nudge amount
+			32,										// max num chars( 0 = no limit)
+			kFalse,									// is read only
+			kFalse,									// should notify each key stroke
+			kFalse,									// range checking enabled
+			kFalse,									// blank entry allowed
+			0, 0,									// upper/lower bounds
+			""										// initial text
+		),
+		StaticTextWidget
+		(
+			kInvalidWidgetID,				// widget ID
+			kSysStaticTextPMRsrcId,			// PMRsrc ID
+			kBindNone,						// frame binding
+			10, 60, 200, 75,				// left, top, right, bottom
+			kTrue, kTrue,					// Visible, Enabled
+			kAlignLeft, kEllipsizeEnd		// Alignment, ellipsize style
+			kTrue,
+			kLoginPasswordLblStringKey,		// Initial text.
+			0								// No associated widget
+		),
+		XPBCPasswordEditBoxWidget
+		(
+			kLoginPasswordEdtWidgetID,				// WidgetId
+			kSysEditBoxPMRsrcId,					// RsrcId
+			kBindNone,								// Frame binding
+			10, 80, 200, 100,						// left, top, right, bottom
+			kTrue, kTrue,							// Visible, Enabled
+			0,										// widget id of nudge button			
+			0,	0,									// small/large nudge amount
+			32,										// max num chars( 0 = no limit)
+			kFalse,									// is read only
+			kFalse,									// should notify each key stroke
+			kFalse,									// range checking enabled
+			kFalse,									// blank entry allowed
+			0, 0,									// upper/lower bounds
+			""										// initial text
+		),
+	},
+};
+#undef kLoginDialogWidth
+#undef kLoginDialogHeight
+
+
+#endif // __ODFRC__
+
+#include "XPBC_enUS.fr"
+#include "XPBC_frFR.fr"
+
+//  Code generated by DollyXs code generator

@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F63CBAE2732D075001F08A6 /* SDKFileHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBAC2732D075001F08A6 /* SDKFileHelper.cpp */; };
+		8F63CBAF2732D075001F08A6 /* SDKPlugInEntrypoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBAD2732D075001F08A6 /* SDKPlugInEntrypoint.cpp */; };
+		8F63CBB32732D0A3001F08A6 /* DLBNoStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBB02732D0A3001F08A6 /* DLBNoStrip.cpp */; };
+		8F63CBB42732D0A3001F08A6 /* DLBID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBB22732D0A3001F08A6 /* DLBID.cpp */; };
+		8F63CBB62732D0B6001F08A6 /* DLB.fr in Resources */ = {isa = PBXBuildFile; fileRef = 8F63CBB52732D0B6001F08A6 /* DLB.fr */; };
+		8F63CBC02732D119001F08A6 /* InDesignModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CBBF2732D119001F08A6 /* InDesignModel.framework */; };
+		8F63CBC22732D123001F08A6 /* libPublicPlugIn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CBC12732D123001F08A6 /* libPublicPlugIn.a */; };
+		A708E6D21BB1928500819366 /* DLBDocHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A708E6CE1BB1928500819366 /* DLBDocHelper.cpp */; };
+		A708E6D51BB192E800819366 /* TriggerResourceDeps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A708E6D31BB192E800819366 /* TriggerResourceDeps.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		F957086F15C90B3E00C95573 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.fr";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(REZ_COLLECTOR_DIR)/$(INPUT_FILE_NAME).rsrc",
+			);
+			script = "$ID_SDK_ROOT/devtools/bin/odfrc-cmd -d RELEASE $ODFRC_ADDITIONAL_FLAGS -o \"$REZ_COLLECTOR_DIR/$INPUT_FILE_NAME.rsrc\" \"$INPUT_FILE_PATH\"\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		77D687F3113861B500D56A9C /* DocLibPlugin_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DocLibPlugin_debug.xcconfig; sourceTree = "<group>"; };
+		77D687F4113861B500D56A9C /* DocLibPlugin_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DocLibPlugin_release.xcconfig; sourceTree = "<group>"; };
+		7FE5845A08AD6DB8007DB654 /* DocLibPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = DocLibPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
+		8F63CBAC2732D075001F08A6 /* SDKFileHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKFileHelper.cpp; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/source/sdksamples/common/SDKFileHelper.cpp; sourceTree = "<group>"; };
+		8F63CBAD2732D075001F08A6 /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
+		8F63CBB02732D0A3001F08A6 /* DLBNoStrip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DLBNoStrip.cpp; path = source/DLBNoStrip.cpp; sourceTree = "<group>"; };
+		8F63CBB12732D0A3001F08A6 /* DLBID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLBID.h; path = source/DLBID.h; sourceTree = "<group>"; };
+		8F63CBB22732D0A3001F08A6 /* DLBID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DLBID.cpp; path = source/DLBID.cpp; sourceTree = "<group>"; };
+		8F63CBB52732D0B6001F08A6 /* DLB.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DLB.fr; path = source/DLB.fr; sourceTree = "<group>"; };
+		8F63CBB72732D0FB001F08A6 /* cocoa_ui_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = cocoa_ui_release.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/prj/_shared_build_settings/cocoa_ui_release.xcconfig; sourceTree = "<group>"; };
+		8F63CBB82732D0FB001F08A6 /* cocoa_ui_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = cocoa_ui_debug.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/prj/_shared_build_settings/cocoa_ui_debug.xcconfig; sourceTree = "<group>"; };
+		8F63CBB92732D0FB001F08A6 /* common_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = common_release.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/prj/_shared_build_settings/common_release.xcconfig; sourceTree = "<group>"; };
+		8F63CBBA2732D0FB001F08A6 /* common_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = common_debug.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/prj/_shared_build_settings/common_debug.xcconfig; sourceTree = "<group>"; };
+		8F63CBBF2732D119001F08A6 /* InDesignModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModel.framework; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModel.framework; sourceTree = "<group>"; };
+		8F63CBC12732D123001F08A6 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = "<group>"; };
+		8F63CBC32732D13D001F08A6 /* InDesignModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModel.framework; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/debug_cocoa64/packagefolder/contents/macos/InDesignModel.framework; sourceTree = "<group>"; };
+		8F63CBC52732D147001F08A6 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/build/mac/debug_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = "<group>"; };
+		8F63CC4A2732DA3F001F08A6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/source/sdksamples/common/Info.plist; sourceTree = "<group>"; };
+		A708E6CE1BB1928500819366 /* DLBDocHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DLBDocHelper.cpp; path = source/DLBDocHelper.cpp; sourceTree = "<group>"; };
+		A708E6CF1BB1928500819366 /* DLBDocHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLBDocHelper.h; path = source/DLBDocHelper.h; sourceTree = "<group>"; };
+		A708E6D01BB1928500819366 /* IDocHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IDocHelper.h; path = source/IDocHelper.h; sourceTree = "<group>"; };
+		A708E6D31BB192E800819366 /* TriggerResourceDeps.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TriggerResourceDeps.cpp; path = source/TriggerResourceDeps.cpp; sourceTree = "<group>"; };
+		A708E6D61BB1930B00819366 /* DLBFactoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DLBFactoryList.h; path = source/DLBFactoryList.h; sourceTree = "<group>"; };
+		F957087215C90B3E00C95573 /* DocLib.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DocLib.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F957086B15C90B3E00C95573 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F63CBC02732D119001F08A6 /* InDesignModel.framework in Frameworks */,
+				8F63CBC22732D123001F08A6 /* libPublicPlugIn.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B05EEAD08840E8D00D809E1 = {
+			isa = PBXGroup;
+			children = (
+				4B05EEC708840E8D00D809E1 /* Source */,
+				4B05EED008840E9400D809E1 /* Resources */,
+				7F52248408AFCE1F00139994 /* xcconfig */,
+				F957084215C90B2D00C95573 /* InDesign Libraries */,
+				4B05EEBB08840E8D00D809E1 /* Products */,
+				8F63CC4A2732DA3F001F08A6 /* Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		4B05EEBB08840E8D00D809E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F957087215C90B3E00C95573 /* DocLib.InDesignPlugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B05EEC708840E8D00D809E1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A708E6D61BB1930B00819366 /* DLBFactoryList.h */,
+				A708E6CE1BB1928500819366 /* DLBDocHelper.cpp */,
+				A708E6CF1BB1928500819366 /* DLBDocHelper.h */,
+				A708E6D01BB1928500819366 /* IDocHelper.h */,
+				A708E6D31BB192E800819366 /* TriggerResourceDeps.cpp */,
+				4B05EECB08840E9100D809E1 /* Plugin */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		4B05EECB08840E9100D809E1 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				8F63CBAC2732D075001F08A6 /* SDKFileHelper.cpp */,
+				8F63CBAD2732D075001F08A6 /* SDKPlugInEntrypoint.cpp */,
+				8F63CBB22732D0A3001F08A6 /* DLBID.cpp */,
+				8F63CBB12732D0A3001F08A6 /* DLBID.h */,
+				8F63CBB02732D0A3001F08A6 /* DLBNoStrip.cpp */,
+			);
+			name = Plugin;
+			sourceTree = "<group>";
+		};
+		4B05EED008840E9400D809E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8F63CBB52732D0B6001F08A6 /* DLB.fr */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7F52248408AFCE1F00139994 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				8F63CBBA2732D0FB001F08A6 /* common_debug.xcconfig */,
+				8F63CBB82732D0FB001F08A6 /* cocoa_ui_debug.xcconfig */,
+				8F63CBB72732D0FB001F08A6 /* cocoa_ui_release.xcconfig */,
+				8F63CBB92732D0FB001F08A6 /* common_release.xcconfig */,
+				7FE5845A08AD6DB8007DB654 /* DocLibPlugin.xcconfig */,
+				77D687F3113861B500D56A9C /* DocLibPlugin_debug.xcconfig */,
+				77D687F4113861B500D56A9C /* DocLibPlugin_release.xcconfig */,
+			);
+			name = xcconfig;
+			sourceTree = "<group>";
+		};
+		F957084215C90B2D00C95573 /* InDesign Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F957084915C90B2D00C95573 /* For Cocoa64 */,
+			);
+			name = "InDesign Libraries";
+			sourceTree = "<group>";
+		};
+		F957084915C90B2D00C95573 /* For Cocoa64 */ = {
+			isa = PBXGroup;
+			children = (
+				8F63CBBF2732D119001F08A6 /* InDesignModel.framework */,
+				8F63CBC12732D123001F08A6 /* libPublicPlugIn.a */,
+				F957084A15C90B2D00C95573 /* Debug */,
+			);
+			name = "For Cocoa64";
+			sourceTree = "<group>";
+		};
+		F957084A15C90B2D00C95573 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				8F63CBC52732D147001F08A6 /* libPublicPlugIn.a */,
+				8F63CBC32732D13D001F08A6 /* InDesignModel.framework */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F957086215C90B3E00C95573 /* Release_Cocoa64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F957087015C90B3E00C95573 /* Build configuration list for PBXNativeTarget "Release_Cocoa64" */;
+			buildPhases = (
+				F957086315C90B3E00C95573 /* Sources */,
+				F957086B15C90B3E00C95573 /* Frameworks */,
+				F957086C15C90B3E00C95573 /* Rez */,
+				F957086D15C90B3E00C95573 /* Resources */,
+				F957086E15C90B3E00C95573 /* ShellScript */,
+			);
+			buildRules = (
+				F957086F15C90B3E00C95573 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = Release_Cocoa64;
+			productName = Release;
+			productReference = F957087215C90B3E00C95573 /* DocLib.InDesignPlugin */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B05EEAF08840E8D00D809E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				TargetAttributes = {
+					F957086215C90B3E00C95573 = {
+						DevelopmentTeam = 3WBLWC32YG;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "DocLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 4B05EEAD08840E8D00D809E1;
+			productRefGroup = 4B05EEBB08840E8D00D809E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F957086215C90B3E00C95573 /* Release_Cocoa64 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F957086D15C90B3E00C95573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F63CBB62732D0B6001F08A6 /* DLB.fr in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		F957086C15C90B3E00C95573 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F957086E15C90B3E00C95573 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$ID_SDK_ROOT/build/mac/packagescripts/copyResources.sh\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F957086315C90B3E00C95573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F63CBB32732D0A3001F08A6 /* DLBNoStrip.cpp in Sources */,
+				A708E6D51BB192E800819366 /* TriggerResourceDeps.cpp in Sources */,
+				8F63CBAF2732D075001F08A6 /* SDKPlugInEntrypoint.cpp in Sources */,
+				8F63CBB42732D0A3001F08A6 /* DLBID.cpp in Sources */,
+				A708E6D21BB1928500819366 /* DLBDocHelper.cpp in Sources */,
+				8F63CBAE2732D075001F08A6 /* SDKFileHelper.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4B05EEB108840E8D00D809E1 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE5845A08AD6DB8007DB654 /* DocLibPlugin.xcconfig */;
+			buildSettings = {
+				BUILT_PRODUCTS_DIR = "$(ID_BUILT_SDK_SAMPLES_DIR)";
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS)",
+					$ID_SDK_ROOT/source/public/interfaces/tables,
+					$ID_SDK_ROOT/source/public/components/widgetbin/includes,
+					$ID_SDK_ROOT/source/public/interfaces/workgroup,
+					$ID_SDK_ROOT/source/public/interfaces/interactive,
+					$ID_SDK_ROOT/source/public/interfaces/interactive/ui,
+					$ID_SDK_ROOT/source/public/interfaces/colormgmt,
+					$ID_SDK_ROOT/source/public/interfaces/incopy,
+					$ID_SDK_ROOT/source/public/interfaces/cjk,
+					$ID_SDK_ROOT/source/public/facades/graphics,
+					$ID_SDK_ROOT/source/public/facades/text,
+					$ID_SDK_ROOT/source/public/facades/layout,
+					$ID_SDK_ROOT/source/public/components/publiclib/plugins,
+					$ID_SDK_ROOT/source/public/components/publiclib/files,
+					$ID_SDK_ROOT/source/public/components/publiclib/objectmodel,
+					$ID_SDK_ROOT/source/sdksamples/common,
+					$ID_SDK_ROOT/external/afl/includes,
+					/Users/melody/deve/InDesign/Sources/CC2024/PageMakeUp_GEDIMAT/doclib/source,
+				);
+				INFOPLIST_FILE = $ID_SDK_ROOT/source/sdksamples/common/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				PLC_OUTPUT_TYPE = InDa;
+				PRODUCT_NAME = DocLib;
+			};
+			name = Default;
+		};
+		F957087115C90B3E00C95573 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77D687F4113861B500D56A9C /* DocLibPlugin_release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 3WBLWC32YG;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS)",
+					$ID_SDK_ROOT/source/public/interfaces/tables,
+					$ID_SDK_ROOT/source/public/components/widgetbin/includes,
+					$ID_SDK_ROOT/source/public/interfaces/workgroup,
+					$ID_SDK_ROOT/source/public/interfaces/interactive,
+					$ID_SDK_ROOT/source/public/interfaces/interactive/ui,
+					$ID_SDK_ROOT/source/public/interfaces/colormgmt,
+					$ID_SDK_ROOT/source/public/interfaces/incopy,
+					$ID_SDK_ROOT/source/public/interfaces/cjk,
+					$ID_SDK_ROOT/source/public/facades/graphics,
+					$ID_SDK_ROOT/source/public/facades/text,
+					$ID_SDK_ROOT/source/public/facades/layout,
+					$ID_SDK_ROOT/source/public/components/publiclib/plugins,
+					$ID_SDK_ROOT/source/public/components/publiclib/files,
+					$ID_SDK_ROOT/source/public/components/publiclib/objectmodel,
+					$ID_SDK_ROOT/source/sdksamples/common,
+					$ID_SDK_ROOT/external/afl/includes,
+					source,
+					$ID_SDK_ROOT/external/dva/third_party/boost_libraries,
+				);
+				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK;
+				INFOPLIST_FILE = "$(SRCROOT)/../../../../../../AdobeSDKs/Adobe_InDesign_CC2024_Products_SDK/source/sdksamples/common/Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					$ID_SDK_ROOT/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 16.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adobe.InDesign.DocLib;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "DocLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B05EEB108840E8D00D809E1 /* Default */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Default;
+		};
+		F957087015C90B3E00C95573 /* Build configuration list for PBXNativeTarget "Release_Cocoa64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F957087115C90B3E00C95573 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B05EEAF08840E8D00D809E1 /* Project object */;
+}

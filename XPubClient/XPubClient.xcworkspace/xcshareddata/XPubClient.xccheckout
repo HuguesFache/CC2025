@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0F023670-BC0E-463A-926A-1781AE04915E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XPubClient</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>55DFADE0-7840-41B8-8D50-C14538FFD035</key>
+		<string>http://svn.trias.fr/CC2017</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XPubClient/XPubClient.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>55DFADE0-7840-41B8-8D50-C14538FFD035</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>55DFADE0-7840-41B8-8D50-C14538FFD035</key>
+		<string>http://svn.trias.fr/CC2017</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.trias.fr/CC2017/XPubClient/XPubClient.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>55DFADE0-7840-41B8-8D50-C14538FFD035</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>55DFADE0-7840-41B8-8D50-C14538FFD035</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CC2017</string>
+		</dict>
+	</array>
+</dict>
+</plist>

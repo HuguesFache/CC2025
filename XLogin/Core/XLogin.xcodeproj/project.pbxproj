@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A7E037821B8470500038A90F /* SDKPlugInEntrypoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037811B8470500038A90F /* SDKPlugInEntrypoint.cpp */; };
+		A7E037BB1B8471770038A90F /* XLGActionComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037971B8471770038A90F /* XLGActionComponent.cpp */; };
+		A7E037BE1B8471770038A90F /* XLGChangeStatusDialogController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E0379A1B8471770038A90F /* XLGChangeStatusDialogController.cpp */; };
+		A7E037BF1B8471770038A90F /* XLGChangeStatusDialogObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E0379B1B8471770038A90F /* XLGChangeStatusDialogObserver.cpp */; };
+		A7E037C01B8471770038A90F /* XLGChechOutCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E0379C1B8471770038A90F /* XLGChechOutCmd.cpp */; };
+		A7E037C21B8471770038A90F /* XLGDialogController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E0379E1B8471770038A90F /* XLGDialogController.cpp */; };
+		A7E037C31B8471770038A90F /* XLGDialogObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E0379F1B8471770038A90F /* XLGDialogObserver.cpp */; };
+		A7E037C41B8471770038A90F /* XLGDocObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037A01B8471770038A90F /* XLGDocObserver.cpp */; };
+		A7E037C51B8471770038A90F /* XLGFacade.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037A11B8471770038A90F /* XLGFacade.cpp */; };
+		A7E037C81B8471770038A90F /* XLGOpenDialogCmd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037A61B8471770038A90F /* XLGOpenDialogCmd.cpp */; };
+		A7E037C91B8471770038A90F /* XLGPreferences.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037A71B8471770038A90F /* XLGPreferences.cpp */; };
+		A7E037CA1B8471770038A90F /* XLGResponder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037A81B8471770038A90F /* XLGResponder.cpp */; };
+		A7E037CC1B8471770038A90F /* XLGServiceProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037AB1B8471770038A90F /* XLGServiceProvider.cpp */; };
+		A7E037CD1B8471770038A90F /* XLGStartupShutdown.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037AC1B8471770038A90F /* XLGStartupShutdown.cpp */; };
+		A7E037D31B8471770038A90F /* XLGTextModelObserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037B31B8471770038A90F /* XLGTextModelObserver.cpp */; };
+		A7E037D71B847F7C0038A90F /* XLGAutoClosingDialogImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037D41B847F7C0038A90F /* XLGAutoClosingDialogImpl.cpp */; };
+		A7E037D81B847F7C0038A90F /* XLGAutoInitVariable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7E037D51B847F7C0038A90F /* XLGAutoInitVariable.cpp */; };
+		F957085215C90B3B00C95573 /* XLG.fr in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EED108840E9500D809E1 /* XLG.fr */; };
+		F957085415C90B3B00C95573 /* XLGNoStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EECD08840E9300D809E1 /* XLGNoStrip.cpp */; };
+		F957085515C90B3B00C95573 /* XLGID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EECE08840E9400D809E1 /* XLGID.cpp */; };
+		F957086415C90B3E00C95573 /* XLG.fr in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EED108840E9500D809E1 /* XLG.fr */; };
+		F957086615C90B3E00C95573 /* XLGNoStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EECD08840E9300D809E1 /* XLGNoStrip.cpp */; };
+		F957086715C90B3E00C95573 /* XLGID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B05EECE08840E9400D809E1 /* XLGID.cpp */; };
+		F957087415C90B5100C95573 /* InDesignModelAndUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F957084D15C90B2D00C95573 /* InDesignModelAndUI.framework */; };
+		F957087515C90B5100C95573 /* libPublicPlugIn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F957084E15C90B2D00C95573 /* libPublicPlugIn.a */; };
+		F957087615C90B5D00C95573 /* InDesignModelAndUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F957084B15C90B2D00C95573 /* InDesignModelAndUI.framework */; };
+		F957087715C90B5D00C95573 /* libPublicPlugIn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F957084C15C90B2D00C95573 /* libPublicPlugIn.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		F957085D15C90B3B00C95573 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.fr";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(REZ_COLLECTOR_DIR)/$(INPUT_FILE_NAME).rsrc",
+			);
+			script = "$ID_SDK_ROOT/devtools/bin/odfrc-cmd -d DEBUG $ODFRC_ADDITIONAL_FLAGS -o \"$REZ_COLLECTOR_DIR/$INPUT_FILE_NAME.rsrc\" \"$INPUT_FILE_PATH\"";
+		};
+		F957086F15C90B3E00C95573 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.fr";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(REZ_COLLECTOR_DIR)/$(INPUT_FILE_NAME).rsrc",
+			);
+			script = "$ID_SDK_ROOT/devtools/bin/odfrc-cmd -d RELEASE $ODFRC_ADDITIONAL_FLAGS -o \"$REZ_COLLECTOR_DIR/$INPUT_FILE_NAME.rsrc\" \"$INPUT_FILE_PATH\"";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXFileReference section */
+		4B05EECD08840E9300D809E1 /* XLGNoStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XLGNoStrip.cpp; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLGNoStrip.cpp; sourceTree = SOURCE_ROOT; };
+		4B05EECE08840E9400D809E1 /* XLGID.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XLGID.cpp; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLGID.cpp; sourceTree = SOURCE_ROOT; };
+		4B05EECF08840E9400D809E1 /* XLGID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XLGID.h; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLGID.h; sourceTree = SOURCE_ROOT; };
+		4B05EED108840E9500D809E1 /* XLG.fr */ = {isa = PBXFileReference; lastKnownFileType = text; name = XLG.fr; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLG.fr; sourceTree = SOURCE_ROOT; };
+		77355572120250EF00E6FC19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../source/sdksamples/common/Info.plist; sourceTree = SOURCE_ROOT; };
+		77D687F1113861B500D56A9C /* _shared_build_settings/cocoa_ui_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = _shared_build_settings/cocoa_ui_debug.xcconfig; sourceTree = "<group>"; };
+		77D687F2113861B500D56A9C /* _shared_build_settings/cocoa_ui_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = _shared_build_settings/cocoa_ui_release.xcconfig; sourceTree = "<group>"; };
+		77D687F3113861B500D56A9C /* XLoginPlugin_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = XLoginPlugin_debug.xcconfig; sourceTree = "<group>"; };
+		77D687F4113861B500D56A9C /* XLoginPlugin_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = XLoginPlugin_release.xcconfig; sourceTree = "<group>"; };
+		7FE5845808AD6DB8007DB654 /* _shared_build_settings/common_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = _shared_build_settings/common_release.xcconfig; sourceTree = SOURCE_ROOT; };
+		7FE5845908AD6DB8007DB654 /* _shared_build_settings/common_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = _shared_build_settings/common_debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		7FE5845A08AD6DB8007DB654 /* XLoginPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = XLoginPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
+		A7E037811B8470500038A90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/Adobe_InDesign_cc2024_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
+		A7E0378A1B8471770038A90F /* IXLGFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IXLGFacade.h; path = source/IXLGFacade.h; sourceTree = "<group>"; };
+		A7E0378B1B8471770038A90F /* IXLGPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IXLGPreferences.h; path = source/IXLGPreferences.h; sourceTree = "<group>"; };
+		A7E037971B8471770038A90F /* XLGActionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGActionComponent.cpp; path = source/XLGActionComponent.cpp; sourceTree = "<group>"; };
+		A7E0379A1B8471770038A90F /* XLGChangeStatusDialogController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGChangeStatusDialogController.cpp; path = source/XLGChangeStatusDialogController.cpp; sourceTree = "<group>"; };
+		A7E0379B1B8471770038A90F /* XLGChangeStatusDialogObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGChangeStatusDialogObserver.cpp; path = source/XLGChangeStatusDialogObserver.cpp; sourceTree = "<group>"; };
+		A7E0379C1B8471770038A90F /* XLGChechOutCmd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGChechOutCmd.cpp; path = source/XLGChechOutCmd.cpp; sourceTree = "<group>"; };
+		A7E0379E1B8471770038A90F /* XLGDialogController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGDialogController.cpp; path = source/XLGDialogController.cpp; sourceTree = "<group>"; };
+		A7E0379F1B8471770038A90F /* XLGDialogObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGDialogObserver.cpp; path = source/XLGDialogObserver.cpp; sourceTree = "<group>"; };
+		A7E037A01B8471770038A90F /* XLGDocObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGDocObserver.cpp; path = source/XLGDocObserver.cpp; sourceTree = "<group>"; };
+		A7E037A11B8471770038A90F /* XLGFacade.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGFacade.cpp; path = source/XLGFacade.cpp; sourceTree = "<group>"; };
+		A7E037A21B8471770038A90F /* XLGFactoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLGFactoryList.h; path = source/XLGFactoryList.h; sourceTree = "<group>"; };
+		A7E037A61B8471770038A90F /* XLGOpenDialogCmd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGOpenDialogCmd.cpp; path = source/XLGOpenDialogCmd.cpp; sourceTree = "<group>"; };
+		A7E037A71B8471770038A90F /* XLGPreferences.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGPreferences.cpp; path = source/XLGPreferences.cpp; sourceTree = "<group>"; };
+		A7E037A81B8471770038A90F /* XLGResponder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGResponder.cpp; path = source/XLGResponder.cpp; sourceTree = "<group>"; };
+		A7E037AB1B8471770038A90F /* XLGServiceProvider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGServiceProvider.cpp; path = source/XLGServiceProvider.cpp; sourceTree = "<group>"; };
+		A7E037AC1B8471770038A90F /* XLGStartupShutdown.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGStartupShutdown.cpp; path = source/XLGStartupShutdown.cpp; sourceTree = "<group>"; };
+		A7E037B31B8471770038A90F /* XLGTextModelObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGTextModelObserver.cpp; path = source/XLGTextModelObserver.cpp; sourceTree = "<group>"; };
+		A7E037D41B847F7C0038A90F /* XLGAutoClosingDialogImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGAutoClosingDialogImpl.cpp; path = source/XLGAutoClosingDialogImpl.cpp; sourceTree = "<group>"; };
+		A7E037D51B847F7C0038A90F /* XLGAutoInitVariable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGAutoInitVariable.cpp; path = source/XLGAutoInitVariable.cpp; sourceTree = "<group>"; };
+		F957084B15C90B2D00C95573 /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../../../Developer/Adobe_InDesign_cc2024_Products_SDK/build/mac/debug_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = SOURCE_ROOT; };
+		F957084C15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../debug_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
+		F957084D15C90B2D00C95573 /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../../../Developer/Adobe_InDesign_cc2024_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = SOURCE_ROOT; };
+		F957084E15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
+		F957086015C90B3B00C95573 /* XLogin.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XLogin.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		F957087215C90B3E00C95573 /* XLogin.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XLogin.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F957085915C90B3B00C95573 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F957087615C90B5D00C95573 /* InDesignModelAndUI.framework in Frameworks */,
+				F957087715C90B5D00C95573 /* libPublicPlugIn.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F957086B15C90B3E00C95573 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F957087415C90B5100C95573 /* InDesignModelAndUI.framework in Frameworks */,
+				F957087515C90B5100C95573 /* libPublicPlugIn.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B05EEAD08840E8D00D809E1 = {
+			isa = PBXGroup;
+			children = (
+				4B05EEC708840E8D00D809E1 /* Source */,
+				4B05EED008840E9400D809E1 /* Resources */,
+				7F52248408AFCE1F00139994 /* xcconfig */,
+				F957084215C90B2D00C95573 /* InDesign Libraries */,
+				4B05EEBB08840E8D00D809E1 /* Products */,
+				77355572120250EF00E6FC19 /* Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		4B05EEBB08840E8D00D809E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F957086015C90B3B00C95573 /* XLogin.InDesignPlugin */,
+				F957087215C90B3E00C95573 /* XLogin.InDesignPlugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B05EEC708840E8D00D809E1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A7E037D41B847F7C0038A90F /* XLGAutoClosingDialogImpl.cpp */,
+				A7E037D51B847F7C0038A90F /* XLGAutoInitVariable.cpp */,
+				A7E0378A1B8471770038A90F /* IXLGFacade.h */,
+				A7E0378B1B8471770038A90F /* IXLGPreferences.h */,
+				A7E037A21B8471770038A90F /* XLGFactoryList.h */,
+				A7E037971B8471770038A90F /* XLGActionComponent.cpp */,
+				A7E0379A1B8471770038A90F /* XLGChangeStatusDialogController.cpp */,
+				A7E0379B1B8471770038A90F /* XLGChangeStatusDialogObserver.cpp */,
+				A7E0379C1B8471770038A90F /* XLGChechOutCmd.cpp */,
+				A7E0379E1B8471770038A90F /* XLGDialogController.cpp */,
+				A7E0379F1B8471770038A90F /* XLGDialogObserver.cpp */,
+				A7E037A01B8471770038A90F /* XLGDocObserver.cpp */,
+				A7E037A11B8471770038A90F /* XLGFacade.cpp */,
+				A7E037A61B8471770038A90F /* XLGOpenDialogCmd.cpp */,
+				A7E037A71B8471770038A90F /* XLGPreferences.cpp */,
+				A7E037A81B8471770038A90F /* XLGResponder.cpp */,
+				A7E037AB1B8471770038A90F /* XLGServiceProvider.cpp */,
+				A7E037AC1B8471770038A90F /* XLGStartupShutdown.cpp */,
+				A7E037B31B8471770038A90F /* XLGTextModelObserver.cpp */,
+				4B05EECB08840E9100D809E1 /* Plugin */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		4B05EECB08840E9100D809E1 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				A7E037811B8470500038A90F /* SDKPlugInEntrypoint.cpp */,
+				4B05EECD08840E9300D809E1 /* XLGNoStrip.cpp */,
+				4B05EECF08840E9400D809E1 /* XLGID.h */,
+				4B05EECE08840E9400D809E1 /* XLGID.cpp */,
+			);
+			name = Plugin;
+			sourceTree = "<group>";
+		};
+		4B05EED008840E9400D809E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B05EED108840E9500D809E1 /* XLG.fr */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7F52248408AFCE1F00139994 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				7FE5845808AD6DB8007DB654 /* _shared_build_settings/common_release.xcconfig */,
+				7FE5845908AD6DB8007DB654 /* _shared_build_settings/common_debug.xcconfig */,
+				7FE5845A08AD6DB8007DB654 /* XLoginPlugin.xcconfig */,
+				77D687F1113861B500D56A9C /* _shared_build_settings/cocoa_ui_debug.xcconfig */,
+				77D687F2113861B500D56A9C /* _shared_build_settings/cocoa_ui_release.xcconfig */,
+				77D687F3113861B500D56A9C /* XLoginPlugin_debug.xcconfig */,
+				77D687F4113861B500D56A9C /* XLoginPlugin_release.xcconfig */,
+			);
+			name = xcconfig;
+			sourceTree = "<group>";
+		};
+		F957084215C90B2D00C95573 /* InDesign Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F957084915C90B2D00C95573 /* For Cocoa64 */,
+			);
+			name = "InDesign Libraries";
+			sourceTree = "<group>";
+		};
+		F957084915C90B2D00C95573 /* For Cocoa64 */ = {
+			isa = PBXGroup;
+			children = (
+				F957084D15C90B2D00C95573 /* InDesignModelAndUI.framework */,
+				F957084E15C90B2D00C95573 /* libPublicPlugIn.a */,
+				F957084A15C90B2D00C95573 /* Debug */,
+			);
+			name = "For Cocoa64";
+			sourceTree = "<group>";
+		};
+		F957084A15C90B2D00C95573 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				F957084B15C90B2D00C95573 /* InDesignModelAndUI.framework */,
+				F957084C15C90B2D00C95573 /* libPublicPlugIn.a */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F957085015C90B3B00C95573 /* Debug_Cocoa64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F957085E15C90B3B00C95573 /* Build configuration list for PBXNativeTarget "Debug_Cocoa64" */;
+			buildPhases = (
+				F957085115C90B3B00C95573 /* Sources */,
+				F957085915C90B3B00C95573 /* Frameworks */,
+				F957085A15C90B3B00C95573 /* Rez */,
+				F957085B15C90B3B00C95573 /* Resources */,
+				F957085C15C90B3B00C95573 /* ShellScript */,
+			);
+			buildRules = (
+				F957085D15C90B3B00C95573 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = Debug_Cocoa64;
+			productName = Debug;
+			productReference = F957086015C90B3B00C95573 /* XLogin.InDesignPlugin */;
+			productType = "com.apple.product-type.framework";
+		};
+		F957086215C90B3E00C95573 /* Release_Cocoa64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F957087015C90B3E00C95573 /* Build configuration list for PBXNativeTarget "Release_Cocoa64" */;
+			buildPhases = (
+				F957086315C90B3E00C95573 /* Sources */,
+				F957086B15C90B3E00C95573 /* Frameworks */,
+				F957086C15C90B3E00C95573 /* Rez */,
+				F957086D15C90B3E00C95573 /* Resources */,
+				F957086E15C90B3E00C95573 /* ShellScript */,
+			);
+			buildRules = (
+				F957086F15C90B3E00C95573 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = Release_Cocoa64;
+			productName = Release;
+			productReference = F957087215C90B3E00C95573 /* XLogin.InDesignPlugin */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B05EEAF08840E8D00D809E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "XLogin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 4B05EEAD08840E8D00D809E1;
+			productRefGroup = 4B05EEBB08840E8D00D809E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F957085015C90B3B00C95573 /* Debug_Cocoa64 */,
+				F957086215C90B3E00C95573 /* Release_Cocoa64 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F957085B15C90B3B00C95573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F957086D15C90B3E00C95573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		F957085A15C90B3B00C95573 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F957086C15C90B3E00C95573 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F957085C15C90B3B00C95573 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$ID_SDK_ROOT/build/mac/packagescripts/copyResources.sh\"";
+			showEnvVarsInLog = 0;
+		};
+		F957086E15C90B3E00C95573 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$ID_SDK_ROOT/build/mac/packagescripts/copyResources.sh\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F957085115C90B3B00C95573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F957085215C90B3B00C95573 /* XLG.fr in Sources */,
+				F957085415C90B3B00C95573 /* XLGNoStrip.cpp in Sources */,
+				F957085515C90B3B00C95573 /* XLGID.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F957086315C90B3E00C95573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7E037BE1B8471770038A90F /* XLGChangeStatusDialogController.cpp in Sources */,
+				A7E037D81B847F7C0038A90F /* XLGAutoInitVariable.cpp in Sources */,
+				A7E037BF1B8471770038A90F /* XLGChangeStatusDialogObserver.cpp in Sources */,
+				A7E037D71B847F7C0038A90F /* XLGAutoClosingDialogImpl.cpp in Sources */,
+				A7E037821B8470500038A90F /* SDKPlugInEntrypoint.cpp in Sources */,
+				A7E037BB1B8471770038A90F /* XLGActionComponent.cpp in Sources */,
+				A7E037CC1B8471770038A90F /* XLGServiceProvider.cpp in Sources */,
+				F957086415C90B3E00C95573 /* XLG.fr in Sources */,
+				A7E037C31B8471770038A90F /* XLGDialogObserver.cpp in Sources */,
+				A7E037C21B8471770038A90F /* XLGDialogController.cpp in Sources */,
+				F957086615C90B3E00C95573 /* XLGNoStrip.cpp in Sources */,
+				A7E037C81B8471770038A90F /* XLGOpenDialogCmd.cpp in Sources */,
+				A7E037C91B8471770038A90F /* XLGPreferences.cpp in Sources */,
+				A7E037C01B8471770038A90F /* XLGChechOutCmd.cpp in Sources */,
+				F957086715C90B3E00C95573 /* XLGID.cpp in Sources */,
+				A7E037D31B8471770038A90F /* XLGTextModelObserver.cpp in Sources */,
+				A7E037C41B8471770038A90F /* XLGDocObserver.cpp in Sources */,
+				A7E037CD1B8471770038A90F /* XLGStartupShutdown.cpp in Sources */,
+				A7E037CA1B8471770038A90F /* XLGResponder.cpp in Sources */,
+				A7E037C51B8471770038A90F /* XLGFacade.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4B05EEB108840E8D00D809E1 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE5845A08AD6DB8007DB654 /* XLoginPlugin.xcconfig */;
+			buildSettings = {
+				BUILT_PRODUCTS_DIR = "$(ID_BUILT_SDK_SAMPLES_DIR)";
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS)",
+					$ID_SDK_ROOT/source/public/interfaces/tables,
+					$ID_SDK_ROOT/source/public/components/widgetbin/includes,
+					$ID_SDK_ROOT/source/public/interfaces/workgroup,
+					$ID_SDK_ROOT/source/public/interfaces/interactive,
+					$ID_SDK_ROOT/source/public/interfaces/interactive/ui,
+					$ID_SDK_ROOT/source/public/interfaces/colormgmt,
+					$ID_SDK_ROOT/source/public/interfaces/incopy,
+					$ID_SDK_ROOT/source/public/interfaces/cjk,
+					$ID_SDK_ROOT/source/public/facades/graphics,
+					$ID_SDK_ROOT/source/public/facades/text,
+					$ID_SDK_ROOT/source/public/facades/layout,
+					$ID_SDK_ROOT/source/public/components/publiclib/plugins,
+					$ID_SDK_ROOT/source/public/components/publiclib/files,
+					$ID_SDK_ROOT/source/public/components/publiclib/objectmodel,
+					$ID_SDK_ROOT/source/sdksamples/common,
+					$ID_SDK_ROOT/external/afl/includes,
+					/Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source,
+				);
+				INFOPLIST_FILE = $ID_SDK_ROOT/source/sdksamples/common/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				PLC_OUTPUT_TYPE = InDa;
+				PRODUCT_NAME = XLogin;
+			};
+			name = Default;
+		};
+		F957085F15C90B3B00C95573 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77D687F3113861B500D56A9C /* XLoginPlugin_debug.xcconfig */;
+			buildSettings = {
+				PLC_GENERATE_PKGINFO_FILE = "$(inherited)";
+			};
+			name = Default;
+		};
+		F957087115C90B3E00C95573 /* Default */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77D687F4113861B500D56A9C /* XLoginPlugin_release.xcconfig */;
+			buildSettings = {
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(HEADER_SEARCH_PATHS)",
+					$ID_SDK_ROOT/source/public/interfaces/tables,
+					$ID_SDK_ROOT/source/public/components/widgetbin/includes,
+					$ID_SDK_ROOT/source/public/interfaces/workgroup,
+					$ID_SDK_ROOT/source/public/interfaces/interactive,
+					$ID_SDK_ROOT/source/public/interfaces/interactive/ui,
+					$ID_SDK_ROOT/source/public/interfaces/colormgmt,
+					$ID_SDK_ROOT/source/public/interfaces/incopy,
+					$ID_SDK_ROOT/source/public/interfaces/cjk,
+					$ID_SDK_ROOT/source/public/facades/graphics,
+					$ID_SDK_ROOT/source/public/facades/text,
+					$ID_SDK_ROOT/source/public/facades/layout,
+					$ID_SDK_ROOT/source/public/components/publiclib/plugins,
+					$ID_SDK_ROOT/source/public/components/publiclib/files,
+					$ID_SDK_ROOT/source/public/components/publiclib/objectmodel,
+					$ID_SDK_ROOT/source/sdksamples/common,
+					$ID_SDK_ROOT/external/afl/includes,
+					../../XRailClient/XRailClient/source,
+					source,
+				);
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "XLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B05EEB108840E8D00D809E1 /* Default */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Default;
+		};
+		F957085E15C90B3B00C95573 /* Build configuration list for PBXNativeTarget "Debug_Cocoa64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F957085F15C90B3B00C95573 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		F957087015C90B3E00C95573 /* Build configuration list for PBXNativeTarget "Release_Cocoa64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F957087115C90B3E00C95573 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B05EEAF08840E8D00D809E1 /* Project object */;
+}

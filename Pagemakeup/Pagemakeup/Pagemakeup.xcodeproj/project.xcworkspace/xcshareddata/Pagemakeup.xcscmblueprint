@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "49bcda78-4203-4777-9931-731373cd4f8f++505",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "49bcda78-4203-4777-9931-731373cd4f8f++505" : {
+
+    },
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "49bcda78-4203-4777-9931-731373cd4f8f++505" : 0,
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "98D5FE6A-353C-475C-88CB-96B4B28E0ECF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "49bcda78-4203-4777-9931-731373cd4f8f++505" : "CC2021\/",
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : "CC2015\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pagemakeup",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pagemakeup\/Pagemakeup\/Pagemakeup.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2021",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "49bcda78-4203-4777-9931-731373cd4f8f++505"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2015",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5e42b2f0-b590-4876-9088-6d244583d957++505"
+    }
+  ]
+}

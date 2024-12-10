@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B725A6D9-EC8E-46B1-9FD6-D9C6B98B6001</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pagemakeup</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>89EB22A5-DF23-4AEB-9E19-4F7D72C734AF</key>
+		<string>http://svn.trias.fr/CC2019/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pagemakeup/Pagemakeup.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>89EB22A5-DF23-4AEB-9E19-4F7D72C734AF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>89EB22A5-DF23-4AEB-9E19-4F7D72C734AF</key>
+		<string>http://svn.trias.fr/CC2019</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.trias.fr/CC2019/trunk/Pagemakeup/Pagemakeup.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>89EB22A5-DF23-4AEB-9E19-4F7D72C734AF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>89EB22A5-DF23-4AEB-9E19-4F7D72C734AF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CC2019</string>
+		</dict>
+	</array>
+</dict>
+</plist>

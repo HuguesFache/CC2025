@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\IAnnoncesList.h" />
+    <ClInclude Include="source\IXPubClientUtils.h" />
+    <ClInclude Include="source\XPBCAnnonceNodeID.h" />
+    <ClInclude Include="source\XPBCFactoryList.h" />
+    <ClInclude Include="source\XPBCID.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
+    <ClCompile Include="source\TriggerResourceDeps.cpp" />
+    <ClCompile Include="source\XPBCActionComponent.cpp" />
+    <ClCompile Include="source\XPBCAnnonceData.cpp" />
+    <ClCompile Include="source\XPBCAnnonceNodeID.cpp" />
+    <ClCompile Include="source\XPBCAnnoncesList.cpp" />
+    <ClCompile Include="source\XPBCAnnoncesPanelObserver.cpp" />
+    <ClCompile Include="source\XPBCAnnoncesTreeViewAdapter.cpp" />
+    <ClCompile Include="source\XPBCAnnoncesTreeViewWidgetMgr.cpp" />
+    <ClCompile Include="source\XPBCDocResponder.cpp" />
+    <ClCompile Include="source\XPBCDocServiceProvider.cpp" />
+    <ClCompile Include="source\XPBCID.cpp" />
+    <ClCompile Include="source\XPBCLoginDialogController.cpp" />
+    <ClCompile Include="source\XPBCNoStrip.cpp" />
+    <ClCompile Include="source\XPBCSetStringCmd.cpp" />
+    <ClCompile Include="source\XPBCStartupShutdown.cpp" />
+    <ClCompile Include="source\XPBCUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="source\XPBC.fr">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        odfrc $(ODFRC_ADDITIONAL_FLAGS) "%(FullPath)" -o "$(IntDir)%(Filename).fres" -i "source" @"XPubUIodfrc.rsp"
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).fres;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)TriggerResourceDeps.obj;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <None Include="source\XPBC_enUS.fr" />
+    <None Include="source\XPBC_frFR.fr" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="source\XPBC.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">source;$(ID_SDK_DIR)\source\precomp\msvc;$(ID_SDK_DIR)\source\public\includes;$(ID_SDK_DIR)\source\sdksamples\common;%(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>XPubUI</ProjectName>
+    <ProjectGuid>{8537D2C9-3D8C-A7C6-A358-7052E07CFD02}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="XPubUIReleaseX64.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\XPubUI\indesignCC2024\64\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pln</TargetExt>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>$(IntDir)XPubUI.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/vmg @"XPubUIcpp.rsp"</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;BOOST_SYSTEM_NO_DEPRECATED;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>VCPlugInHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)XPubUI.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalIncludeDirectories>.\source;..\XPubConnection\source</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>merge_res.cmd "$(IntDir)"  XPBUI &amp; echo Deleting old resources... &amp; del /f /s "$(TargetDir)($(TargetName) Resources)\"*.idrc &gt; $(IntDir)prevDeletedResources.txt &amp;  xcopy /Q /E "$(IntDir)"*.idrc "$(TargetDir)($(TargetName) Resources)\" /Y</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(ID_SDK_DIR)\build\win\objrx64\PMRuntime.lib;$(ID_SDK_DIR)\build\win\objrx64\Public.lib;$(ID_SDK_DIR)\build\win\objrx64\WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\DV_WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\Database.lib;$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib</AdditionalDependencies>
+      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\XPubUI.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\XPubUI\indesignCC2024\64\XPubUI.pdb</ProgramDatabaseFile>
+      <ImportLibrary>C:\tmp\XPubUI\indesignCC2024\64\XPubUI.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>restore_res.cmd "$(IntDir)"  XPBUI</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

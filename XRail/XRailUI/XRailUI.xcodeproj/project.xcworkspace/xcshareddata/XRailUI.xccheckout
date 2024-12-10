@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F437432D-76B0-49F9-9B8C-CF4BFB14DBD2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XRailUI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F8A34CB6-9F71-4E85-BFF3-3463E438C8E8</key>
+		<string>http://svn.trias.fr/CC2015/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XRail/XRailUI/XRailUI.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F8A34CB6-9F71-4E85-BFF3-3463E438C8E8</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>F8A34CB6-9F71-4E85-BFF3-3463E438C8E8</key>
+		<string>http://svn.trias.fr/CC2015</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.trias.fr/CC2015/trunk/XRail/XRailUI/XRailUI.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F8A34CB6-9F71-4E85-BFF3-3463E438C8E8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8A34CB6-9F71-4E85-BFF3-3463E438C8E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CC2015</string>
+		</dict>
+	</array>
+</dict>
+</plist>

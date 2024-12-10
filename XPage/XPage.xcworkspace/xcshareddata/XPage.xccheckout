@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F55A9EC0-D826-43FF-9A56-5A47B82F6BDE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XPage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EF6C03AC-60B1-4307-90BE-A7E21B2DB003</key>
+		<string>http://svn.trias.fr/CC2018/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XPage/XPage.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EF6C03AC-60B1-4307-90BE-A7E21B2DB003</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>EF6C03AC-60B1-4307-90BE-A7E21B2DB003</key>
+		<string>http://svn.trias.fr/CC2018</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svn.trias.fr/CC2018/trunk/XPage/XPage.xcworkspace</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EF6C03AC-60B1-4307-90BE-A7E21B2DB003</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EF6C03AC-60B1-4307-90BE-A7E21B2DB003</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CC2018</string>
+		</dict>
+	</array>
+</dict>
+</plist>

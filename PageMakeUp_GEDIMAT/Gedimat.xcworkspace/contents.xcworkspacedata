@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:doclib/DocLib.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:framelib/FrameLib.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:pagelib/PageLib.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:pagemakeup/PageMakeUp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:parser/Parser.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:textlib/TextLib.xcodeproj">
+   </FileRef>
+</Workspace>

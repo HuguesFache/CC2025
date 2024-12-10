@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{78120e3d-d0ab-4f9e-8a3a-c5e6c5ed0b2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7b823eb7-8f35-4529-a4c1-555b53468c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4da94837-4922-4930-b2ec-472d16090ed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ListePubs">
+      <UniqueIdentifier>{da8abb7e-36e2-41aa-8580-b254bb3eef86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Plugin">
+      <UniqueIdentifier>{ef1b4447-41f8-496e-8553-b5ce6ddc2f59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Autres">
+      <UniqueIdentifier>{e96b63a4-6bfe-4e81-bdd2-4003d3d6b198}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\IAnnoncesList.h">
+      <Filter>Source Files\ListePubs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XPBCAnnonceNodeID.h">
+      <Filter>Source Files\ListePubs</Filter>
+    </ClInclude>
+    <ClInclude Include="source\IXPubClientUtils.h">
+      <Filter>Source Files\Autres</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XPBCFactoryList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\XPBCID.h">
+      <Filter>Source Files\Plugin</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\XPBCAnnonceNodeID.cpp">
+      <Filter>Source Files\ListePubs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCAnnoncesList.cpp">
+      <Filter>Source Files\ListePubs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCAnnoncesPanelObserver.cpp">
+      <Filter>Source Files\ListePubs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCAnnoncesTreeViewAdapter.cpp">
+      <Filter>Source Files\ListePubs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCAnnoncesTreeViewWidgetMgr.cpp">
+      <Filter>Source Files\ListePubs</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCID.cpp">
+      <Filter>Source Files\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCNoStrip.cpp">
+      <Filter>Source Files\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCActionComponent.cpp">
+      <Filter>Source Files\Autres</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCDocResponder.cpp">
+      <Filter>Source Files\Autres</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCDocServiceProvider.cpp">
+      <Filter>Source Files\Autres</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCLoginDialogController.cpp">
+      <Filter>Source Files\Autres</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCSetStringCmd.cpp">
+      <Filter>Source Files\Autres</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCStartupShutdown.cpp">
+      <Filter>Source Files\Autres</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCUtils.cpp">
+      <Filter>Source Files\Autres</Filter>
+    </ClCompile>
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp">
+      <Filter>Source Files\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+      <Filter>Source Files\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="source\XPBCAnnonceData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\TriggerResourceDeps.cpp">
+      <Filter>Source Files\Plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\XPBC_enUS.fr">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="source\XPBC_frFR.fr">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="source\XPBC.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="source\XPBC.fr">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="14.0">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="InCopy|x64">
+      <Configuration>InCopy</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>XPageUI</ProjectName>
+    <ProjectGuid>{8537D2C9-3D8C-A7C6-A358-7052E07CFD02}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="XPGUIReleaseX64.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="XPGUIReleaseX64.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">C:\Program Files\Adobe\Adobe InCopy CC 2024\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\XPageUI\indesignCC2024\64\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">C:\tmp\XPageUI\incopyCC2024\64\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pln</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">.pln</TargetExt>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>$(IntDir)XPageUI.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/vmg @"XPageUIcpp.rsp"</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;BOOST_SYSTEM_NO_DEPRECATED;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>VCPlugInHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)XPageUI.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalIncludeDirectories>.\source;..\..\XRailClient\XRailClient\source;..\Core\source;..\..\XRail\XRail\source</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>merge_res.cmd "$(IntDir)"  XPGUI &amp; echo Deleting old resources... &amp; del /f /s "$(TargetDir)($(TargetName) Resources)\"*.idrc &gt; $(IntDir)prevDeletedResources.txt &amp;  xcopy /Q /E "$(IntDir)"*.idrc "$(TargetDir)($(TargetName) Resources)\" /Y</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(ID_SDK_DIR)\build\win\objrx64\PMRuntime.lib;$(ID_SDK_DIR)\build\win\objrx64\Public.lib;$(ID_SDK_DIR)\build\win\objrx64\WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\DV_WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\Database.lib;$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib</AdditionalDependencies>
+      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\XPageUI.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\XPageUI\indesignCC2024\64\XPageUI.pdb</ProgramDatabaseFile>
+      <ImportLibrary>C:\tmp\XPageUI\indesignCC2024\64\XPageUI.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>restore_res.cmd "$(IntDir)"  XPGUI</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>$(IntDir)XPageUI.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/vmg @"XPageUIcpp.rsp"</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;BOOST_SYSTEM_NO_DEPRECATED;STRICT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>VCPlugInHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)XPageUI.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <AdditionalIncludeDirectories>.\source;..\..\XRailClient\XRailClient\source;..\Core\source;..\..\XRail\XRail\source</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>merge_res.cmd "$(IntDir)"  XPGUI &amp; echo Deleting old resources... &amp; del /f /s "$(TargetDir)($(TargetName) Resources)\"*.idrc &gt; $(IntDir)prevDeletedResources.txt &amp;  xcopy /Q /E "$(IntDir)"*.idrc "$(TargetDir)($(TargetName) Resources)\" /Y</Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(ID_SDK_DIR)\build\win\objrx64\PMRuntime.lib;$(ID_SDK_DIR)\build\win\objrx64\Public.lib;$(ID_SDK_DIR)\build\win\objrx64\WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\DV_WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\Database.lib;$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib</AdditionalDependencies>
+      <OutputFile>C:\Program Files\Adobe\Adobe InCopy CC 2024\Plug-Ins\Trias\XPageUI.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\XPageUI\incopyCC2024\64\XPageUI.pdb</ProgramDatabaseFile>
+      <ImportLibrary>C:\tmp\XPageUI\incopyCC2024\64\XPageUI.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>restore_res.cmd "$(IntDir)"  XPGUI</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Core\source\XPGArticleDataNode.cpp" />
+    <ClCompile Include="..\Core\source\XPGFormeDataNode.cpp" />
+    <ClCompile Include="..\Core\source\XPGImageDataNode.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKFileHelper.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
+    <ClCompile Include="source\XPGUIID.cpp" />
+    <ClCompile Include="source\XPGUINoStrip.cpp" />
+    <ClCompile Include="source\TriggerResourceDeps.cpp" />
+    <ClCompile Include="source\ActionIDToStringDataImpl.cpp" />
+    <ClCompile Include="source\XPageUIUtils.cpp" />
+    <ClCompile Include="source\XPGUIActionComponent.cpp" />
+    <ClCompile Include="source\XPGUIAddToArtDialogController.cpp" />
+    <ClCompile Include="source\XPGUIAddToArtDialogObserver.cpp" />
+    <ClCompile Include="source\XPGUIArticleAdornment.cpp" />
+    <ClCompile Include="source\XPGUIAssemblagesPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIAssemblagesTVHierarchyAdapter.cpp" />
+    <ClCompile Include="source\XPGUIDisplayImageFormePanelView.cpp" />
+    <ClCompile Include="source\XPGUIDisplayImagePanelView.cpp" />
+    <ClCompile Include="source\XPGUIFormeAdornmentShape.cpp" />
+    <ClCompile Include="source\XPGUIFormeDragDropSource.cpp" />
+    <ClCompile Include="source\XPGUIFormeDropTarget.cpp" />
+    <ClCompile Include="source\XPGUIFormeFileHandler.cpp" />
+    <ClCompile Include="source\XPGUIFormeNodeID.cpp" />
+    <ClCompile Include="source\XPGUIFormesPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIFormesTVHierarchyAdapter.cpp" />
+    <ClCompile Include="source\XPGUIFormesTVWidgetMgr.cpp" />
+    <ClCompile Include="source\XPGUIIImagesPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIImageDragDropSource.cpp" />
+    <ClCompile Include="source\XPGUIImageDropTarget.cpp" />
+    <ClCompile Include="source\XPGUIImageFileHandler.cpp" />
+    <ClCompile Include="source\XPGUIImageNodeID.cpp" />
+    <ClCompile Include="source\XPGUIImagesFormesViewObserver.cpp" />
+    <ClCompile Include="source\XPGUIImagesTVHierarchyAdapter.cpp" />
+    <ClCompile Include="source\XPGUIImagesTVWidgetMgr.cpp" />
+    <ClCompile Include="source\XPGUIImagesViewObserver.cpp" />
+    <ClCompile Include="source\XPGUILinkArtDialogController.cpp" />
+    <ClCompile Include="source\XPGUILinkArtDialogObserver.cpp" />
+    <ClCompile Include="source\XPGUIMatchingStylesList.cpp" />
+    <ClCompile Include="source\XPGUINewAssemblageDialogController.cpp" />
+    <ClCompile Include="source\XPGUIOrderArtDialogController.cpp" />
+    <ClCompile Include="source\XPGUIOrderArtDialogObserver.cpp" />
+    <ClCompile Include="source\XPGUIPlacedFormeContentAdornment.cpp" />
+    <ClCompile Include="source\XPGUIPlacedFormeFooterAdornment.cpp" />
+    <ClCompile Include="source\XPGUIPlacedFormeHeaderAdornment.cpp" />
+    <ClCompile Include="source\XPGUIResaRedacAdornmentShape.cpp" />
+    <ClCompile Include="source\XPGUIResaRedacPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIStatisticsPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIStyleMatchingDialogController.cpp" />
+    <ClCompile Include="source\XPGUIStyleMatchingHierarchyAdapter.cpp" />
+    <ClCompile Include="source\XPGUIStyleMatchingNodeID.cpp" />
+    <ClCompile Include="source\XPGUIStyleMatchingWidgetMgr.cpp" />
+    <ClCompile Include="source\XPGUITECImageDragDropSource.cpp" />
+    <ClCompile Include="source\XPGUITECImageDropTarget.cpp" />
+    <ClCompile Include="source\XPGUITECImagesPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIArticleNodeID.cpp" />
+    <ClCompile Include="source\XPGUIArticleViewObserver.cpp" />
+    <ClCompile Include="source\XPGUITextesPanelView.cpp" />
+    <ClCompile Include="source\XPGUIArticleTVHierarchyAdapter.cpp" />
+    <ClCompile Include="source\XPGUIArticleTVWidgetMgr.cpp" />
+    <ClCompile Include="source\XPGUIUpdateFormeDialogController.cpp" />
+    <ClCompile Include="source\XPGUIUpdateStyleMatchingHierarchyAdapter.cpp" />
+    <ClCompile Include="source\XPGUIUpdateStyleMatchingWidgetMgr.cpp" />
+    <ClCompile Include="source\XPGUIXmlFileHandler.cpp" />
+    <ClCompile Include="source\XPGUIXmlWithFormeFileHandler.cpp" />
+    <ClCompile Include="source\XPGUIXRailArticleWithFormeDropTarget.cpp" />
+    <ClCompile Include="source\XPGUIXRailImageDragDropSource.cpp" />
+    <ClCompile Include="source\XPGUIXRailImageDropTarget.cpp" />
+    <ClCompile Include="source\XPGUIXRailImagesPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIXRailInCopyImageDragDropSource.cpp" />
+    <ClCompile Include="source\XPGUIXRailInCopyImagesPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIXRailNewFormeDialogController.cpp" />
+    <ClCompile Include="source\XPGUIXRailNewFormeDialogObserver.cpp" />
+    <ClCompile Include="source\XPGUIXRailPanelObserver.cpp" />
+    <ClCompile Include="source\XPGUIXRailTexteDragDropSource.cpp" />
+    <ClCompile Include="source\XPGUIXRailXmlDropTarget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKFileHelper.h" />
+    <ClInclude Include="source\XPGUIID.h" />
+    <ClInclude Include="source\XPGUIFactoryList.h" />
+    <ClInclude Include="source\IActionIDToStringData.h" />
+    <ClInclude Include="source\IMatchingStylesList.h" />
+    <ClInclude Include="source\XPageUIUtils.h" />
+    <ClInclude Include="source\XPGUIFormeNodeID.h" />
+    <ClInclude Include="source\XPGUIImageNodeID.h" />
+    <ClInclude Include="source\XPGUIStyleMatchingNodeID.h" />
+    <ClInclude Include="source\XPGUIArticleNodeID.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="source\XPGUI.fr">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        odfrc $(ODFRC_ADDITIONAL_FLAGS) "%(FullPath)" -o "$(IntDir)%(Filename).fres" -i "source" @"XPageUIodfrc.rsp"
+      </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">
+        odfrc $(ODFRC_ADDITIONAL_FLAGS) "%(FullPath)" -o "$(IntDir)%(Filename).fres" -i "source" @"XPageUIodfrc.rsp"
+      </Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)TriggerResourceDeps.obj;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">$(IntDir)TriggerResourceDeps.obj;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).fres;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">$(IntDir)%(Filename).fres;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="source\XPGUI.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='Release|x64'">0x0809</Culture>
+      <Culture Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">0x0809</Culture>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">source;source;$(ID_SDK_DIR)\source\precomp\msvc;$(ID_SDK_DIR)\source\public\includes;$(ID_SDK_DIR)\source\sdksamples\common;%(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='InCopy|x64'">source;source;$(ID_SDK_DIR)\source\precomp\msvc;$(ID_SDK_DIR)\source\public\includes;$(ID_SDK_DIR)\source\sdksamples\common;%(AdditionalIncludeDirectories)
+      </AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\XPGUI_enUS.fr" />
+    <None Include="source\XPGUI_frFR.fr" />
+    <None Include="source\XPGUI_InCopy.fr" />
+    <None Include="source\XPGUI_InDesign.fr" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

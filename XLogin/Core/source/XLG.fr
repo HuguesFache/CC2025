@@ -1,0 +1,880 @@
+//========================================================================================
+//  
+//  $File: $
+//  
+//  Owner: Trias Developpement
+//  
+//  $Author: $
+//  
+//  $DateTime: $
+//  
+//  $Revision: $
+//  
+//  $Change: $
+//  
+//  Copyright Adobe Systems Incorporated. All rights reserved.
+//  
+//  NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance 
+//  with the terms of the Adobe license agreement accompanying it.  If you have received
+//  this file from a source other than Adobe, then your use, modification, or 
+//  distribution of it requires the prior written permission of Adobe.
+//  
+//========================================================================================
+
+#include "VCPlugInHeaders.h"
+
+// General includes:
+#include "MenuDef.fh"
+#include "ActionDef.fh"
+#include "ActionDefs.h"
+#include "AdobeMenuPositions.h"
+#include "LocaleIndex.h"
+#include "PMLocaleIds.h"
+#include "StringTable.fh"
+#include "ObjectModelTypes.fh"
+#include "ShuksanID.h"
+#include "ActionID.h"
+#include "CommandID.h"
+#include "WorkspaceID.h"
+#include "WidgetID.h"
+#include "BuildNumber.h"
+#include "PlugInModel_UIAttributes.h"
+#include "PanelList.fh"
+#include "InterfaceColorDefines.h"
+#include "IControlViewDefs.h"
+#include "SysControlIDs.h"
+#include "Widgets.fh"	// for PalettePanelWidget or DialogBoss
+#include "ScriptInfoTypes.fh"
+#include "AppFrameworkID.h"
+
+// Project includes:
+#include "XLGID.h"
+#include "GenericID.h"
+#include "ShuksanID.h"
+#include "TextID.h"
+
+
+#ifdef __ODFRC__
+
+/*  Plugin version definition.
+*/
+resource PluginVersion (kSDKDefPluginVersionResourceID)
+{
+	kTargetVersion,
+	kXLGPluginID,
+	kSDKDefPlugInMajorVersionNumber, kSDKDefPlugInMinorVersionNumber,
+	kSDKDefHostMajorVersionNumber, kSDKDefHostMinorVersionNumber,
+	kXLGCurrentMajorFormatNumber, kXLGCurrentMinorFormatNumber,
+	{ kInCopyProduct },
+	{ kWildFS },
+	kUIPlugIn,
+	kXLGVersion
+};
+
+/*  The ExtraPluginInfo resource adds extra information to the Missing Plug-in dialog
+	that is popped when a document containing this plug-in's data is opened when
+	this plug-in is not present. These strings are not translatable strings
+	since they must be available when the plug-in isn't around. They get stored
+	in any document that this plug-in contributes data to.
+*/
+resource ExtraPluginInfo(1)
+{
+	kXLGCompanyValue,			// Company name
+	kXLGMissingPluginURLValue,	// URL 
+	kXLGMissingPluginAlertValue,	// Missing plug-in alert text
+};
+
+
+resource ImplementationAlias(1) 
+{ 
+	{ 
+		kXLGCurrentUserImpl, kStringDataImpl,
+		kXLGFirstStartupImpl, kBoolDataImpl,
+		kXLGCurrentStoryImpl, kStringDataImpl,		
+		kXLGCurrentStatusImpl, kStringDataImpl,
+		kXLGCurrentGroupImpl, kStringDataImpl,
+		kXLGCurrentRecepientImpl, kStringDataImpl,
+		kXLGIdsStatusListImpl, kStringListDataImpl,
+		kXPGDisableCloseDocBoolImpl, kBoolDataImpl,
+		kXPGDisableCloseDoc2BoolImpl, kBoolDataImpl,
+		kXLGCurrentDocNameImpl, kStringDataImpl,
+		kXLGCloseDialogTimerImpl, kIntDataImpl,
+	} 
+};
+
+
+/* Boss class definition.
+*/
+resource ClassDescriptionTable(kSDKDefClassDescriptionTableResourceID)
+{{{
+	
+	/**
+	 This boss class supports two interfaces:
+	 IActionComponent and IPMPersist.
+
+	 
+	 @ingroup xlogin
+	*/
+	Class
+	{
+		kXLGActionComponentBoss,
+		kInvalidClass,
+		{
+			/** Handle the actions from the menu. */
+			IID_IACTIONCOMPONENT, kXLGActionComponentImpl,
+			/** Persist the state of the menu across application instantiation.
+			Implementation provided by the API.*/
+			IID_IPMPERSIST, kPMPersistImpl
+		}
+	},
+
+	/**
+		 This boss class inherits from an API panel boss class, and
+		 adds an interface to control a pop-up menu on the panel.
+		 The implementation for this interface is provided by the API.
+
+		 
+		 @ingroup xlogin
+	*/
+
+	Class
+	{
+		kXLGPanelWidgetBoss,
+		kPalettePanelWidgetBoss,
+		{
+			/** The plug-in's implementation of ITextControlData with an exotic IID of IID_IPANELMENUDATA.
+			Implementation provided by the API.
+			*/
+			IID_IPANELMENUDATA, kCPanelMenuDataImpl,
+		}
+	},
+	Class
+	{
+		kXLGOpenLoginDialogCmdBoss,
+		kInvalidClass,
+		{
+			IID_ICOMMAND, kXLGOpenDialogCmdImpl,
+		}
+	},
+
+	Class
+	{
+		kXLGUnlockStoriesCmdBoss,
+		kInvalidClass,
+		{
+			IID_ICOMMAND, kXLGCheckOutCmdImpl,						
+		}
+	},
+
+	Class
+	{
+		kXLGLoginDialogBoss,
+		kDialogBoss,
+		{
+		    //Controller
+		    IID_IDIALOGCONTROLLER, kXLGDialogControllerImpl,
+		}
+	},
+	
+
+	Class
+	{
+		kXLGChangeStatusDialogBoss,
+		kDialogBoss,
+		{
+			IID_IDIALOGCONTROLLER  , kXLGChangeStatusDialogControllerImpl,
+			IID_IOBSERVER		   , kXLGChangeStatusDialogObserverImpl,
+		}
+	}, 
+	
+	Class
+	{
+		kXLGDropDownListWidgetBoss,
+		kDropDownListWidgetBoss,
+		{
+			IID_IIDLIST, kStringListDataImpl,
+		}
+	},
+	
+	Class
+	{
+		kXLGColorDropDownListWidgetBoss,
+		kColorListDropDownWidgetBoss ,
+		{
+			IID_IIDLIST, kStringListDataImpl,
+		}
+	},
+	
+	Class
+	{
+		kXLGStartupShutdownBoss,
+		kInvalidClass,
+		 {
+					/** identify the service type */
+				IID_IK2SERVICEPROVIDER, kCStartupShutdownProviderImpl,
+				
+						/** Implementation of IStartupShutdownService that installs idle task on startup */
+				IID_ISTARTUPSHUTDOWN, kXLGStartupShutdownImpl,
+	
+		 }
+	},	
+    Class
+	{
+		kXLGResponderServiceBoss,
+		kInvalidClass,
+		{
+			IID_IK2SERVICEPROVIDER,	kXLGServiceProviderImpl,
+			IID_IRESPONDER        ,	kXLGResponderImpl,
+		}
+	},
+	
+	
+			
+	/**
+		 This boss class implements the dialog for this plug-in. All
+		 dialogs must implement IDialogController. Specialisation of
+		 IObserver is only necessary if you want to handle widget
+		 changes dynamically rather than just gathering their values
+		 and applying in the IDialogController implementation.
+		 In this implementation IObserver is specialised so that the
+		 plug-in's about box is popped when the info button widget
+		 is clicked.
+
+		 
+		 @ingroup xlogin
+	*/
+						
+	AddIn
+	{
+		kUtilsBoss,
+		kInvalidClass,
+		{
+			IID_IXLGFACADE,kXLGFacadeImpl,
+			
+		}
+	},
+	
+
+	AddIn
+	{   
+	    kSessionBoss,
+	    kInvalidClass,
+        {
+          IID_IXLGPREFERENCES,    kXLGPreferencesImpl,
+          IID_ICURRENTUSER   ,    kXLGCurrentUserImpl,
+          IID_ICURRENTSTORY   ,   kXLGCurrentStoryImpl,	                  
+          IID_ICURRENTSTATUS,     kXLGCurrentStatusImpl,
+          IID_ICURRENTGROUP,      kXLGCurrentGroupImpl,
+          IID_ICURRENTERECEPIENT, kXLGCurrentRecepientImpl,
+          IID_IAUTOCLOSINGDIALOG, kXLGAutoClosingDialogImpl,          
+          IID_IIDSTATUSLIST,	  kXLGIdsStatusListImpl,
+          IID_IDISABLECLOSEDOC,	  kXPGDisableCloseDocBoolImpl,
+          IID_IDISABLECLOSE2DOC,  kXPGDisableCloseDoc2BoolImpl,
+          IID_ICURRENTDOCNAME,    kXLGCurrentDocNameImpl,          
+          IID_ITIMERCLOSEDIALOG,  kXLGCloseDialogTimerImpl,  
+          IID_IINITVARIABLE,      kXLGAutoInitVariableImpl,    
+
+        }
+	
+	},
+	
+	AddIn
+	{
+		kTextStoryBoss,
+		kInvalidClass,
+		{
+			IID_IXLGTEXTMODELOBSERVER, kXLGTextModelObserverImpl,
+		}
+	},
+	AddIn
+	{
+		kTextStoryBoss,
+		kInvalidClass,
+		{
+			/** This observer allows us to track edits to a particular story
+			*/
+			IID_IXLGDOCOBSERVER, kXLGDocObserverImpl,
+		}
+	},
+
+}}};
+
+/*  Implementation definition.
+*/
+resource FactoryList (kSDKDefFactoryListResourceID)
+{
+	kImplementationIDSpace,
+	{
+		#include "XLGFactoryList.h"
+	}
+};
+
+
+/*  Menu definition.
+*/
+resource MenuDef (kSDKDefMenuResourceID)
+{
+	{
+		// The About Plug-ins sub-menu item for this plug-in.
+		kXLGAboutActionID,			// ActionID (kInvalidActionID for positional entries)
+		kXLGAboutMenuPath,			// Menu Path.
+		kSDKDefAlphabeticPosition,			// Menu Position.
+		kSDKDefIsNotDynamicMenuFlag,		// kSDKDefIsNotDynamicMenuFlag or kSDKDefIsDynamicMenuFlag
+
+		// Separator for the popup menu on the panel
+		kXLGSeparator1ActionID,
+		kXLGInternalPopupMenuNameKey kSDKDefDelimiterAndSeparatorPath,	// :- to mark an item as a separator.
+		kXLGSeparator1MenuItemPosition,
+		kSDKDefIsNotDynamicMenuFlag,
+
+		// About this plugin submenu for the popup menu on the panel
+		kXLGPopupAboutThisActionID,
+		kXLGTargetMenuPath
+		kXLGAboutThisMenuItemPosition,
+		kSDKDefIsNotDynamicMenuFlag,
+
+
+		// The Plug-ins menu sub-menu items for this plug-in.
+		kXLGDialogActionID,
+		kXLGPluginsMenuPath,
+		kXLGDialogMenuItemPosition,
+		kSDKDefIsNotDynamicMenuFlag,
+
+	}
+};
+
+/* Action definition.
+*/
+resource ActionDef (kSDKDefActionResourceID)
+{
+	{
+		kXLGActionComponentBoss, 		// ClassID of boss class that implements the ActionID.
+		kXLGAboutActionID,	// ActionID.
+		kXLGAboutMenuKey,	// Sub-menu string.
+		kOtherActionArea,				// Area name (see ActionDefs.h).
+		kNormalAction,					// Type of action (see ActionDefs.h).
+		kDisableIfLowMem,				// Enabling type (see ActionDefs.h).
+		kInvalidInterfaceID,			// Selection InterfaceID this action cares about or kInvalidInterfaceID.
+		kSDKDefInvisibleInKBSCEditorFlag, // kSDKDefVisibleInKBSCEditorFlag or kSDKDefInvisibleInKBSCEditorFlag.
+
+
+		kXLGActionComponentBoss,
+		kXLGPopupAboutThisActionID,
+		kSDKDefAboutThisPlugInMenuKey,	// Key to the name of this action
+		kOtherActionArea,
+		kNormalAction,
+		kDisableIfLowMem,
+		kInvalidInterfaceID,
+		kSDKDefInvisibleInKBSCEditorFlag,
+
+
+		kXLGActionComponentBoss,
+		kXLGDialogActionID,		
+		kXLGDialogMenuItemKey,		
+		kOtherActionArea,			
+		kNormalAction,				
+		kDisableIfLowMem,	
+		kInvalidInterfaceID,		
+		kSDKDefVisibleInKBSCEditorFlag,
+
+
+	}
+};
+
+
+/*  LocaleIndex
+	The LocaleIndex should have indicies that point at your
+	localizations for each language system that you are localized for.
+*/
+/*  String LocaleIndex.
+*/
+resource LocaleIndex ( kSDKDefStringsResourceID)
+{
+	kStringTableRsrcType,
+	{
+		kWildFS, k_enUS, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_enGB, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_deDE, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_frFR, kSDKDefStringsResourceID + index_frFR
+		kWildFS, k_esES, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_ptBR, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_svSE, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_daDK, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_nlNL, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_itIT, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_nbNO, kSDKDefStringsResourceID + index_enUS
+		kWildFS, k_fiFI, kSDKDefStringsResourceID + index_enUS
+		kInDesignJapaneseFS, k_jaJP, kSDKDefStringsResourceID + index_jaJP
+	}
+};
+
+resource LocaleIndex (kSDKDefStringsNoTransResourceID)
+{
+	kStringTableRsrcType,
+	{
+		kWildFS, k_Wild, kSDKDefStringsNoTransResourceID + index_enUS
+	}
+};
+
+resource StringTable (kSDKDefStringsNoTransResourceID + index_enUS)
+{
+	k_enUS,									// Locale Id
+	kEuropeanMacToWinEncodingConverter,		// Character encoding converter
+	{
+		// No-Translate strings go here:
+		kXLGInternalPopupMenuNameKey,	kXLGInternalPopupMenuNameKey,
+	}
+};
+
+
+
+/*  Panel LocaleIndex.
+*/
+resource LocaleIndex (kSDKDefPanelResourceID)
+{
+	kViewRsrcType,
+	{
+		kWildFS, k_Wild, 	kSDKDefPanelResourceID + index_enUS
+	}
+};
+
+
+/*  Type definition.
+*/
+type XLGPanelWidget(kViewRsrcType) : PalettePanelWidget(ClassID = kXLGPanelWidgetBoss)
+{
+	CPanelMenuData;
+};
+
+/*  PanelList definition.
+*/
+resource PanelList (kSDKDefPanelResourceID)
+{
+	{
+		// 1st panel in the list
+		kSDKDefPanelResourceID,		// Resource ID for this panel (use SDK default rsrc ID)
+		kXLGPluginID,			// ID of plug-in that owns this panel
+		kIsResizable,
+		kXLGPanelWidgetActionID,	// Action ID to show/hide the panel
+		kXLGPanelTitleKey,	// Shows up in the Window list.
+		"",							// Alternate menu path of the form "Main:Foo" if you want your palette menu item in a second place
+		0.0,						// Alternate Menu position Alternate Menu position for determining menu order
+		0,0,						// Rsrc ID, Plugin ID for a PNG icon resource to use for this palette
+		c_Panel
+	}
+};
+
+/*  PanelView definition.
+The view is not currently localised: therefore, it can reside here.
+However, if you wish to localise it, it is recommended to locate it in one of
+the localised framework resource files (i.e. XLG_enUS.fr etc.).
+*/
+resource XLGPanelWidget (kSDKDefPanelResourceID + index_enUS) 
+{ 
+	__FILE__, 
+	__LINE__, // Localization macro
+	kXLGPanelWidgetID, // WidgetID
+	kPMRsrcID_None, // RsrcID
+	kBindNone, // Binding (0=none)
+	Frame(0,0,207,32) // Frame: left, top, right, bottom.
+	kTrue, 
+	kTrue, // Visible, Enabled
+	kFalse, // Erase background
+	kInterfacePaletteFill, // Erase to color
+	kFalse, // Draw dropshadow
+	kXLGPanelTitleKey, // Panel name
+	{
+		StaticTextWidget 
+		( 
+			0, // WidgetId (default=0)
+			kSysStaticTextPMRsrcId, // RsrcId
+			kBindNone, // Frame binding
+			Frame(5,10,202,27) // Frame: left, top, right, bottom.
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kAlignLeft, 
+			kEllipsizeEnd, // Alignment, ellipsize style
+			kTrue,
+			kXLGStaticTextKey, // Initial text.
+			0,  // No associated widget
+		),
+	}
+	kXLGInternalPopupMenuNameKey,  // Popup menu name (internal)
+};
+
+
+/*  Dialog LocaleIndex.
+*/
+resource LocaleIndex (kSDKDefDialogResourceID)
+{
+   kViewRsrcType,
+	{
+		kWildFS,	k_Wild, kSDKDefDialogResourceID + index_enUS
+	}
+};
+
+/*  Type definition.
+*/
+type XLGDialogWidget(kViewRsrcType) : DialogBoss(ClassID = kXLGDialogBoss)
+{
+};
+
+/*  Dialog definition.
+This view is not localised: therefore, it can reside here.
+However, if you wish to localise it, it is recommended to locate it in one of
+the localised framework resource files (i.e. XLG_enUS.fr etc.) and
+update your Dialog LocaleIndex accordingly.
+*/
+resource XLGDialogWidget (kSDKDefDialogResourceID + index_enUS) 
+{ 
+	__FILE__, 
+	__LINE__, 
+	kXLGDialogWidgetID, // WidgetID
+	kPMRsrcID_None, // RsrcID
+	kBindNone, // Binding
+	Frame(0,0,388,112) // Frame (l,t,r,b)
+	kTrue, 
+	kTrue, // Visible, Enabled
+	kXLGDialogTitleKey, // Dialog name
+	{
+		//<FREDDYWIDGETDEFLISTUS>
+		DefaultButtonWidget 
+		( 
+			kOKButtonWidgetID, // WidgetID
+			kSysButtonPMRsrcId, // RsrcID
+			kBindNone, // Binding
+			Frame(292,16,372,36) // Frame (l,t,r,b)
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kSDKDefOKButtonApplicationKey,  // Button text
+		),
+		CancelButtonWidget 
+		( 
+			kCancelButton_WidgetID, // WidgetID
+			kSysButtonPMRsrcId, // RsrcID
+			kBindNone, // Binding
+			Frame(292,46,372,66) // Frame (l,t,r,b)
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kSDKDefCancelButtonApplicationKey, // Button name
+			kTrue,  // Change to Reset on option-click.
+		),
+	 
+	} 
+};
+ 
+
+
+/*
+// Type definition.
+*/
+type XRailLoginDialog(kViewRsrcType) : DialogBoss(ClassID = kXLGLoginDialogBoss)
+{
+};
+
+type XRLPasswordEditBoxWidget(kViewRsrcType) : TextEditBoxWidget(ClassID = kPasswordEditBoxWidgetBoss)
+{
+};
+
+/*
+// Dialog LocaleIndex.
+*/
+resource LocaleIndex (kXLGLoginDialogResourceID)
+{
+   kViewRsrcType,
+	{
+		kWildFS,	k_Wild, kXLGLoginDialogResourceID + index_enUS
+	}
+};
+
+
+
+
+
+
+resource XRailLoginDialog (kXLGLoginDialogResourceID + index_enUS) 
+{ 
+	__FILE__, 
+	__LINE__, 
+	kXLGLoginDialogResourceID, // WidgetID
+	kPMRsrcID_None, // RsrcID
+	kBindNone, // Binding
+	Frame(0,0,270,105) // Frame (l,t,r,b)
+	kTrue, 
+	kTrue, // Visible, Enabled
+	kXLGLoginDialogTitleKey, // Dialog name
+	{
+		StaticTextWidget 
+		( 
+			0, 
+			kSysStaticTextPMRsrcId, // WidgetId, RsrcId
+			kBindNone, 
+			Frame(10,10,105,30) // Frame left, top, right, bottom
+			kTrue, 
+			kTrue, 
+			kAlignRight, // Visible, Enabled, Alignment
+			kEllipsizeEnd, 
+			kTrue,
+			kXLGLoginTextKey, 
+			0,  // WidgetID this shortcut is connected to, 0 if none.
+		),
+		TextEditBoxWidget 
+		( 
+			kXLGLoginUserWidgetID, 
+			kSysEditBoxPMRsrcId, // WidgetId, RsrcId
+			kBindNone, 
+			Frame(110,10,260,30) // Frame
+			kTrue, 
+			kTrue, // Visible, Enabled
+			0, // widget id of nudge button
+			0, 
+			0, // small/large nudge amount
+			30, // max num chars( 0 = no limit)
+			kFalse, // is read only
+			kFalse, // should notify each key stroke
+			kFalse, // range checking enabled
+			kFalse, // blank entry allowed
+			0, 
+			0, // upper/lower bounds
+			"",  // initial text
+		),
+		StaticTextWidget 
+		( 
+			0, 
+			kSysStaticTextPMRsrcId, // WidgetId, RsrcId
+			kBindNone, 
+			Frame(10,40,105,60) // Frame left, top, right, bottom
+			kTrue, 
+			kTrue, 
+			kAlignRight, // Visible, Enabled, Alignment
+			kEllipsizeEnd, 
+			kTrue,
+			kXLGPasswordTextKey, 
+			0,  // WidgetID this shortcut is connected to, 0 if none.
+		),
+		XRLPasswordEditBoxWidget 
+		( 
+			kXLGPasswordUserWidgetID, 
+			kSysEditBoxPMRsrcId, // WidgetId, RsrcId
+			kBindNone, 
+			Frame(110,40,260,60) // Frame
+			kTrue, 
+			kTrue, // Visible, Enabled
+			0, // widget id of nudge button
+			0, 
+			0, // small/large nudge amount
+			30, // max num chars( 0 = no limit)
+			kFalse, // is read only
+			kFalse, // should notify each key stroke
+			kFalse, // range checking enabled
+			kFalse, // blank entry allowed
+			0, 
+			0, // upper/lower bounds
+			"",  // initial text
+		),
+		DefaultButtonWidget 
+		( 
+			kOKButtonWidgetID, // WidgetID
+			kSysButtonPMRsrcId, // RsrcID
+			kBindNone, // Binding
+			Frame(90, 75, 185, 95) // Frame (l,t,r,b)
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kSDKDefOKButtonApplicationKey,  // Button text
+		),
+		/*CancelButtonWidget 
+		( 
+			kCancelButton_WidgetID, // WidgetID
+			kSysButtonPMRsrcId, // RsrcID
+			kBindNone, // Binding
+			Frame(55,75,135,95) // Frame (l,t,r,b)
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kSDKDefCancelButtonApplicationKey, // Button name
+			kTrue,  // Change to Reset on option-click.
+		),*/
+	} 
+};
+
+
+
+
+// ------------Change Status dialog resources.--------------
+
+resource LocaleIndex (kXLGChangeStatusDialogResourceID)
+{
+   kViewRsrcType,
+	{
+		kWildFS,	k_Wild, kXLGChangeStatusDialogResourceID + index_enUS
+	}
+};
+type XLGChangeStatusDialogWidget(kViewRsrcType) : DialogBoss(ClassID = kXLGChangeStatusDialogBoss) 
+{
+};
+
+type XLGDropDownListWidget(kViewRsrcType) : DropDownListWidget(ClassID = kXLGDropDownListWidgetBoss) 
+{
+};
+
+
+
+
+
+
+
+
+
+
+
+resource XLGChangeStatusDialogWidget (kXLGChangeStatusDialogResourceID + index_enUS) 
+{ 
+	__FILE__, 
+	__LINE__, 
+	kXLGChangeStatusDialogWidgetID, // WidgetID
+	kPMRsrcID_None, // RsrcID
+	kBindNone, // Binding
+	Frame(20,10,291,186) 
+	kTrue, 
+	kTrue, // Visible, Enabled
+	kXLGChangeStatusDialogTitleKey, // Dialog name
+	{
+		ButtonWidget 
+		( 
+			kOKButtonWidgetID, // The Identifier for this Widget
+			kSysButtonPMRsrcId, // The Plugin ID
+			kBindNone, // Frame binding
+			Frame(139,144,219,164) 
+			kTrue, // Is this visible
+			kTrue, // Is this enabled
+			kSDKDefOKButtonApplicationKey,  // The String value
+		),
+		StaticTextWidget 
+		( 
+			kXLGRecipientStatusTextWidgetID, // The Identifier for this Widget
+			kSysStaticTextPMRsrcId, // The Plugin ID
+			kBindNone, // Frame binding
+			Frame(14,104,90,124) 
+			kFalse, // Is this visible
+			kTrue, // Is this enabled
+			kAlignLeft, // The alignment of this field
+			kEllipsizeEnd, // Where to ellipsize the string if the size is larger than its frame
+			kTrue,
+			kXLGRecipientListTextKey, // The String value
+			0,  // The Widget ID for associated control for shortcut focus
+		),
+		StaticTextWidget 
+		( 
+			kXLGGroupsStatusTextWidgetID, // The Identifier for this Widget
+			kSysStaticTextPMRsrcId, // The Plugin ID
+			kBindNone, // Frame binding
+			Frame(14,74,90,94) 
+			kFalse, // Is this visible
+			kTrue, // Is this enabled
+			kAlignLeft, // The alignment of this field
+			kEllipsizeEnd, // Where to ellipsize the string if the size is larger than its frame
+			kTrue,	
+			kXLGGroupsListTextKey, // The String value
+			0,  // The Widget ID for associated control for shortcut focus
+		),
+		StaticTextWidget 
+		( 
+			0, // The Identifier for this Widget
+			kSysStaticTextPMRsrcId, // The Plugin ID
+			kBindNone, // Frame binding
+			Frame(14,44,90,64) 
+			kTrue, // Is this visible
+			kTrue, // Is this enabled
+			kAlignLeft, // The alignment of this field
+			kEllipsizeEnd, // Where to ellipsize the string if the size is larger than its frame
+			kTrue,
+			kXLGStatusListTextKey, // The String value
+			0,  // The Widget ID for associated control for shortcut focus
+		),
+		XLGDropDownListWidget 
+		( 
+			kXLGRecipientStatusListWidgetID, 
+			kSysDropDownPMRsrcId, // WidgetId, RsrcId
+			kBindLeft | kBindRight | kBindTop, // Frame binding
+			Frame(104,104,255,124) // Frame (l,t,r,b)
+			kFalse, 
+			kTrue, // Visible, Enabled
+			{
+				{				// List Items
+				}
+			},
+		),
+		XLGDropDownListWidget 
+		( 
+			kXLGGroupsStatusListWidgetID, 
+			kSysDropDownPMRsrcId, // WidgetId, RsrcId
+			kBindLeft | kBindRight | kBindTop, // Frame binding
+			Frame(104,74,255,94) // Frame (l,t,r,b)
+			kFalse, 
+			kTrue, // Visible, Enabled
+			{
+				{				// List Items
+				}
+			},
+		),
+		XLGDropDownListWidget 
+		( 
+			kXLGStatsListWidgetID, 
+			kSysDropDownPMRsrcId, // WidgetId, RsrcId
+			kBindLeft | kBindRight | kBindTop, // Frame binding
+			Frame(104,44,255,64) // Frame (l,t,r,b)
+			kTrue, 
+			kTrue, // Visible, Enabled
+			{
+				{				// List Items
+				}
+			},
+		),
+		CancelButtonWidget 
+		( 
+			kCancelButton_WidgetID, // WidgetID
+			kSysButtonPMRsrcId, // RsrcID
+			kBindNone, // Binding
+			Frame(44,144,124,164) // Frame (l,t,r,b)
+			kTrue, 
+			kTrue, // Visible, Enabled
+			kSDKDefCancelButtonApplicationKey, // Button name
+			kTrue,  // Change to Reset on option-click.
+		),
+		StaticTextWidget 
+		( 
+			kXLGCurrentDocumentTextWidgetID, // The Identifier for this Widget
+			kSysStaticTextPMRsrcId, // The Plugin ID
+			kBindNone, // Frame binding
+			Frame(104,14,255,34) 
+			kTrue, // Is this visible
+			kTrue, // Is this enabled
+			kAlignLeft, // The alignment of this field
+			kEllipsizeEnd, // Where to ellipsize the string if the size is larger than its frame
+			kTrue,
+			"", // The String value
+			0,  // The Widget ID for associated control for shortcut focus
+		),
+		StaticTextWidget 
+		( 
+			0, // The Identifier for this Widget
+			kSysStaticTextPMRsrcId, // The Plugin ID
+			kBindNone, // Frame binding
+			Frame(14,14,90,34) 
+			kTrue, // Is this visible
+			kTrue, // Is this enabled
+			kAlignLeft, // The alignment of this field
+			kEllipsizeEnd, // Where to ellipsize the string if the size is larger than its frame
+			kTrue,
+			kXLGSubjectTextKey, // The String value
+			0,  // The Widget ID for associated control for shortcut focus
+		),
+	} 
+};
+
+
+#endif // __ODFRC__
+
+#include "XLG_enUS.fr"
+#include "XLG_frFR.fr"
+
+//  Code generated by DollyXs code generator

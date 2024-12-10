@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7e5d1aeb-ea04-4776-89c6-2f3838dabc52",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "7e5d1aeb-ea04-4776-89c6-2f3838dabc52" : {
+
+    },
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7e5d1aeb-ea04-4776-89c6-2f3838dabc52" : 0,
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8AFEEFBA-458F-4ABF-B35A-EA208337F838",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7e5d1aeb-ea04-4776-89c6-2f3838dabc52" : "CC2017\/",
+    "5e42b2f0-b590-4876-9088-6d244583d957++505" : "CC2015\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "XLogin",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "XLogin\/Core\/XLogin.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2015",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5e42b2f0-b590-4876-9088-6d244583d957++505"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2017",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7e5d1aeb-ea04-4776-89c6-2f3838dabc52"
+    }
+  ]
+}
