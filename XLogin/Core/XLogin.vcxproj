@@ -38,13 +38,13 @@
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\debugx64\sdk\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\objDx64\XLogin\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InCopy CC 2024\Plug-Ins\Trias\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\XLogin\incopyCC2024\64\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InCopy CC 2025\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\XLogin\incopyCC2025\64\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName).sdk</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.pln</TargetExt>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pln</TargetExt>
-    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_CC2025\devtools\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -110,9 +110,9 @@
     <Link>
       <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>$(UI_PLUGIN_LINKLIST);$(ID_SDK_DIR)\build\win\objrx64\PMRuntime.lib;$(ID_SDK_DIR)\build\win\objrx64\Public.lib;$(ID_SDK_DIR)\build\win\objrx64\ASLSupport.lib;$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib</AdditionalDependencies>
-      <OutputFile>C:\Program Files\Adobe\Adobe InCopy CC 2024\Plug-Ins\Trias\XLogin.pln</OutputFile>
-      <ProgramDatabaseFile>C:\tmp\XLogin\incopyCC2024\64\XLogin.pdb</ProgramDatabaseFile>
-      <ImportLibrary>C:\tmp\XLogin\incopyCC2024\64\XLogin.lib</ImportLibrary>
+      <OutputFile>C:\Program Files\Adobe\Adobe InCopy CC 2025\Plug-Ins\Trias\XLogin.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\XLogin\incopyCC2025\64\XLogin.pdb</ProgramDatabaseFile>
+      <ImportLibrary>C:\tmp\XLogin\incopyCC2025\64\XLogin.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Command>restore_res.cmd "$(IntDir)"  XLG</Command>

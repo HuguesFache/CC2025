@@ -342,7 +342,7 @@
 					$ID_SDK_ROOT/external/dva/third_party/boost_libraries,
 					$ID_SDK_ROOT/external/dva/third_party/adobe_source_libraries,
 				);
-				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2024_Products_SDK;
+				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.InDesign.$(PRODUCT_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;

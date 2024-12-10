@@ -10,14 +10,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "53CC93A8-BF8F-4561-999E-58FC5D9610B4",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "49bcda78-4203-4777-9931-731373cd4f8f++505" : "CC2024\/"
+    "49bcda78-4203-4777-9931-731373cd4f8f++505" : "CC2025\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Gedimat",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PageMakeUp_GEDIMAT\/Gedimat.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2024",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2025",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "49bcda78-4203-4777-9931-731373cd4f8f++505"
     }

@@ -40,13 +40,13 @@
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\objDx64\XRailUI\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\objDx64\XRailUI\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\tmp\XRailUI\indesignCC2024\64\</IntDir>
-    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\tmp\XRailUI\indesignCC2025\64\</IntDir>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\SDKs\adobe_indesign_CC2025\devtools\bin;$(ExecutablePath)</ExecutablePath>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">.pln</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">
-    <SourcePath>C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common;$(SourcePath)</SourcePath>
+    <SourcePath>C:\SDKs\adobe_indesign_CC2025\source\sdksamples\common;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -112,10 +112,10 @@
     </PreLinkEvent>
     <Link>
       <AdditionalDependencies>$(UI_PLUGIN_LINKLIST);$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib;$(ID_SDK_DIR)\external\dva\third_party\boost_libraries\bin.v2\libs\boost_regex\lib\win\release\64\boost_regex.lib;$(ID_SDK_DIR)\external\icu\libs\win\releasex64\icucnv.lib;$(ID_SDK_DIR)\build\win\objrx64\ASLSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\XRailUI.pln</OutputFile>
-      <ProgramDatabaseFile>C:\tmp\XRailUI\indesignCC2024\64\XRailUI.pdb</ProgramDatabaseFile>
+      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\XRailUI.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\XRailUI\indesignCC2025\64\XRailUI.pdb</ProgramDatabaseFile>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <ImportLibrary>C:\tmp\XRailUI\indesignCC2024\64\XRailUI.lib</ImportLibrary>
+      <ImportLibrary>C:\tmp\XRailUI\indesignCC2025\64\XRailUI.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Command>restore_res.cmd "$(IntDir)"  XRLUI</Command>
@@ -123,11 +123,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\XRail\source\DocUtils.cpp" />
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\precomp\msvc\VCPlugInHeaders.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
     <ClCompile Include="source\XRailActionComponent.cpp" />
     <ClCompile Include="source\XRailChangeStateDialogController.cpp" />
     <ClCompile Include="source\XRailLinkerDialogController.cpp" />

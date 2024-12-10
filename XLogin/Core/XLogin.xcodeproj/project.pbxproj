@@ -62,10 +62,10 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		4B05EECD08840E9300D809E1 /* XLGNoStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XLGNoStrip.cpp; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLGNoStrip.cpp; sourceTree = SOURCE_ROOT; };
-		4B05EECE08840E9400D809E1 /* XLGID.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XLGID.cpp; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLGID.cpp; sourceTree = SOURCE_ROOT; };
-		4B05EECF08840E9400D809E1 /* XLGID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XLGID.h; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLGID.h; sourceTree = SOURCE_ROOT; };
-		4B05EED108840E9500D809E1 /* XLG.fr */ = {isa = PBXFileReference; lastKnownFileType = text; name = XLG.fr; path = /Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source/XLG.fr; sourceTree = SOURCE_ROOT; };
+		4B05EECD08840E9300D809E1 /* XLGNoStrip.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XLGNoStrip.cpp; path = /Users/melody/deve/InDesign/Sources/cc2025/XLogin/Core/source/XLGNoStrip.cpp; sourceTree = SOURCE_ROOT; };
+		4B05EECE08840E9400D809E1 /* XLGID.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = XLGID.cpp; path = /Users/melody/deve/InDesign/Sources/cc2025/XLogin/Core/source/XLGID.cpp; sourceTree = SOURCE_ROOT; };
+		4B05EECF08840E9400D809E1 /* XLGID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XLGID.h; path = /Users/melody/deve/InDesign/Sources/cc2025/XLogin/Core/source/XLGID.h; sourceTree = SOURCE_ROOT; };
+		4B05EED108840E9500D809E1 /* XLG.fr */ = {isa = PBXFileReference; lastKnownFileType = text; name = XLG.fr; path = /Users/melody/deve/InDesign/Sources/cc2025/XLogin/Core/source/XLG.fr; sourceTree = SOURCE_ROOT; };
 		77355572120250EF00E6FC19 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../source/sdksamples/common/Info.plist; sourceTree = SOURCE_ROOT; };
 		77D687F1113861B500D56A9C /* _shared_build_settings/cocoa_ui_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = _shared_build_settings/cocoa_ui_debug.xcconfig; sourceTree = "<group>"; };
 		77D687F2113861B500D56A9C /* _shared_build_settings/cocoa_ui_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = _shared_build_settings/cocoa_ui_release.xcconfig; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		7FE5845808AD6DB8007DB654 /* _shared_build_settings/common_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = _shared_build_settings/common_release.xcconfig; sourceTree = SOURCE_ROOT; };
 		7FE5845908AD6DB8007DB654 /* _shared_build_settings/common_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = _shared_build_settings/common_debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		7FE5845A08AD6DB8007DB654 /* XLoginPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = XLoginPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
-		A7E037811B8470500038A90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/Adobe_InDesign_cc2024_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
+		A7E037811B8470500038A90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/Adobe_InDesign_cc2025_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
 		A7E0378A1B8471770038A90F /* IXLGFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IXLGFacade.h; path = source/IXLGFacade.h; sourceTree = "<group>"; };
 		A7E0378B1B8471770038A90F /* IXLGPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IXLGPreferences.h; path = source/IXLGPreferences.h; sourceTree = "<group>"; };
 		A7E037971B8471770038A90F /* XLGActionComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGActionComponent.cpp; path = source/XLGActionComponent.cpp; sourceTree = "<group>"; };
@@ -94,9 +94,9 @@
 		A7E037B31B8471770038A90F /* XLGTextModelObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGTextModelObserver.cpp; path = source/XLGTextModelObserver.cpp; sourceTree = "<group>"; };
 		A7E037D41B847F7C0038A90F /* XLGAutoClosingDialogImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGAutoClosingDialogImpl.cpp; path = source/XLGAutoClosingDialogImpl.cpp; sourceTree = "<group>"; };
 		A7E037D51B847F7C0038A90F /* XLGAutoInitVariable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLGAutoInitVariable.cpp; path = source/XLGAutoInitVariable.cpp; sourceTree = "<group>"; };
-		F957084B15C90B2D00C95573 /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../../../Developer/Adobe_InDesign_cc2024_Products_SDK/build/mac/debug_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = SOURCE_ROOT; };
+		F957084B15C90B2D00C95573 /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../../../Developer/Adobe_InDesign_cc2025_Products_SDK/build/mac/debug_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = SOURCE_ROOT; };
 		F957084C15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../debug_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
-		F957084D15C90B2D00C95573 /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../../../Developer/Adobe_InDesign_cc2024_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = SOURCE_ROOT; };
+		F957084D15C90B2D00C95573 /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../../../Developer/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = SOURCE_ROOT; };
 		F957084E15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
 		F957086015C90B3B00C95573 /* XLogin.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XLogin.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		F957087215C90B3E00C95573 /* XLogin.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XLogin.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,7 +433,7 @@
 					$ID_SDK_ROOT/source/public/components/publiclib/objectmodel,
 					$ID_SDK_ROOT/source/sdksamples/common,
 					$ID_SDK_ROOT/external/afl/includes,
-					/Users/melody/deve/InDesign/Sources/cc2024/XLogin/Core/source,
+					/Users/melody/deve/InDesign/Sources/cc2025/XLogin/Core/source,
 				);
 				INFOPLIST_FILE = $ID_SDK_ROOT/source/sdksamples/common/Info.plist;
 				INFOPLIST_PREPROCESS = YES;

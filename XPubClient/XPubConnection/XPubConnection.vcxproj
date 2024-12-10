@@ -25,11 +25,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\tmp\XPubConnection\indesignCC2024\64\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\tmp\XPubConnection\indesignCC2025\64\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">$(ProjectName)</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">.pln</TargetExt>
-    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">C:\SDKs\adobe_indesign_CC2025\devtools\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">
     <Midl>
@@ -61,9 +61,9 @@
     <Link>
       <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>$(ID_SDK_DIR)\build\win\objrx64\PMRuntime.lib;$(ID_SDK_DIR)\build\win\objrx64\Public.lib;$(ID_SDK_DIR)\build\win\objrx64\WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\DV_WidgetBin.lib;$(ID_SDK_DIR)\build\win\objrx64\Database.lib;$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib</AdditionalDependencies>
-      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\XPubConnection.pln</OutputFile>
-      <ProgramDatabaseFile>C:\tmp\XPubConnection\indesignCC2024\64\XPubConnection.pdb</ProgramDatabaseFile>
-      <ImportLibrary>C:\tmp\XPubConnection\indesignCC2024\64\XPubConnection.lib</ImportLibrary>
+      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\XPubConnection.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\XPubConnection\indesignCC2025\64\XPubConnection.pdb</ProgramDatabaseFile>
+      <ImportLibrary>C:\tmp\XPubConnection\indesignCC2025\64\XPubConnection.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Command>restore_res.cmd "$(IntDir)"  XPubConnection</Command>
@@ -79,11 +79,11 @@
     <ClCompile Include="..\..\..\SoapXPubWin\stdsoap2.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\precomp\msvc\VCPlugInHeaders.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='InDesign|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
     <ClCompile Include="source\TriggerResourceDeps.cpp" />
     <ClCompile Include="source\XPBOID.cpp" />
     <ClCompile Include="source\XPBONoStrip.cpp" />

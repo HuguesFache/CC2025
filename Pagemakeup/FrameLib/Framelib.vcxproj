@@ -25,11 +25,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\Framelib\indesignCC2024\64\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\Framelib\indesignCC2025\64\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pln</TargetExt>
-    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_CC2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_CC2025\devtools\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -59,9 +59,9 @@
     <Link>
       <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>$(UI_PLUGIN_LINKLIST);%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\Framelib.pln</OutputFile>
-      <ProgramDatabaseFile>C:\tmp\Framelib\indesignCC2024\64\Framelib.pdb</ProgramDatabaseFile>
-      <ImportLibrary>C:\tmp\Framelib\indesignCC2024\64\Framelib.lib</ImportLibrary>
+      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\Framelib.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\Framelib\indesignCC2025\64\Framelib.pdb</ProgramDatabaseFile>
+      <ImportLibrary>C:\tmp\Framelib\indesignCC2025\64\Framelib.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Command>restore_res.cmd "$(IntDir)"  FLB</Command>
@@ -70,7 +70,7 @@
   <ItemGroup>
     <ClCompile Include="$(id_sdk_dir)\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
     <ClCompile Include="$(ID_SDK_DIR)\source\sdksamples\common\SDKPlugInEntrypoint.cpp" />
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKFileHelper.cpp" />
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\sdksamples\common\SDKFileHelper.cpp" />
     <ClCompile Include="source\FLBID.cpp" />
     <ClCompile Include="source\FLBNoStrip.cpp" />
     <ClCompile Include="source\TriggerResourceDeps.cpp" />
@@ -82,7 +82,7 @@
     <ClCompile Include="source\FLBTextFrameHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKFileHelper.h" />
+    <ClInclude Include="C:\SDKs\adobe_indesign_CC2025\source\sdksamples\common\SDKFileHelper.h" />
     <ClInclude Include="source\FLBID.h" />
     <ClInclude Include="source\FLBFactoryList.h" />
     <ClInclude Include="source\FLBItemManager.h" />

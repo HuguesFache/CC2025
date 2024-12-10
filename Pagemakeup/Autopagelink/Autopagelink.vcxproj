@@ -26,11 +26,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\APL\indesigncc2024\64\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\tmp\APL\indesigncc2025\64\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pln</TargetExt>
-    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_cc2024\devtools\bin;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\SDKs\adobe_indesign_cc2025\devtools\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -60,9 +60,9 @@
     <Link>
       <AdditionalOptions>/IGNORE:4089 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalDependencies>$(UI_PLUGIN_LINKLIST);$(ID_SDK_DIR)\external\afl\libs\win\releasex64\AFL.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2024\Plug-Ins\Trias\Autopagelink.pln</OutputFile>
-      <ProgramDatabaseFile>C:\tmp\APL\indesigncc2024\64\Autopagelink.pdb</ProgramDatabaseFile>
-      <ImportLibrary>C:\tmp\APL\indesigncc2024\64\Autopagelink.lib</ImportLibrary>
+      <OutputFile>C:\Program Files\Adobe\Adobe InDesign 2025\Plug-Ins\Trias\Autopagelink.pln</OutputFile>
+      <ProgramDatabaseFile>C:\tmp\APL\indesigncc2025\64\Autopagelink.pdb</ProgramDatabaseFile>
+      <ImportLibrary>C:\tmp\APL\indesigncc2025\64\Autopagelink.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
       <Command>restore_res.cmd "$(IntDir)"  APL</Command>

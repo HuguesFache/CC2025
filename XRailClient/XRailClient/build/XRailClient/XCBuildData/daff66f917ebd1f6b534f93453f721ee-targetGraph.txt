@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Release_Cocoa64 in XRailClient, no dependencies

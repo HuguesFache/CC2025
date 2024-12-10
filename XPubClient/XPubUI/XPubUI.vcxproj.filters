@@ -80,10 +80,10 @@
     <ClCompile Include="source\XPBCUtils.cpp">
       <Filter>Source Files\Autres</Filter>
     </ClCompile>
-    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp">
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2025\source\sdksamples\common\SDKPlugInEntrypoint.cpp">
       <Filter>Source Files\Plugin</Filter>
     </ClCompile>
-    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2025\source\precomp\msvc\VCPlugInHeaders.cpp">
       <Filter>Source Files\Plugin</Filter>
     </ClCompile>
     <ClCompile Include="source\XPBCAnnonceData.cpp">
@@ -92,7 +92,7 @@
     <ClCompile Include="source\TriggerResourceDeps.cpp">
       <Filter>Source Files\Plugin</Filter>
     </ClCompile>
-    <ClCompile Include="c:\SDKs\adobe_indesign_cc2024\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
+    <ClCompile Include="c:\SDKs\adobe_indesign_cc2025\source\public\libs\publiclib\statics\PlugInStatics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="source\XPBC_enUS.fr">

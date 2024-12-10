@@ -54,13 +54,13 @@
     <ClCompile Include="source\XRLUINoStrip.cpp">
       <Filter>Source Files\Plugin</Filter>
     </ClCompile>
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\precomp\msvc\VCPlugInHeaders.cpp">
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\precomp\msvc\VCPlugInHeaders.cpp">
       <Filter>Source Files\Plugin</Filter>
     </ClCompile>
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\sdksamples\common\SDKPlugInEntrypoint.cpp">
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\sdksamples\common\SDKPlugInEntrypoint.cpp">
       <Filter>Source Files\Plugin</Filter>
     </ClCompile>
-    <ClCompile Include="C:\SDKs\adobe_indesign_CC2024\source\public\libs\publiclib\statics\PlugInStatics.cpp">
+    <ClCompile Include="C:\SDKs\adobe_indesign_CC2025\source\public\libs\publiclib\statics\PlugInStatics.cpp">
       <Filter>Source Files\Plugin</Filter>
     </ClCompile>
   </ItemGroup>
