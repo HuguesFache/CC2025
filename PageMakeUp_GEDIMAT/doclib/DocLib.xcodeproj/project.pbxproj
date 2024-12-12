@@ -340,7 +340,7 @@
 					source,
 					$ID_SDK_ROOT/external/dva/third_party/boost_libraries,
 				);
-				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK;
+				ID_SDK_ROOT = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK;
 				INFOPLIST_FILE = "$(SRCROOT)/../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/source/sdksamples/common/Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
