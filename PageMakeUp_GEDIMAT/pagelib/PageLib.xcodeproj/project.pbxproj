@@ -3,18 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8F63CBD02732D3A1001F08A6 /* SDKLayoutHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBCD2732D3A1001F08A6 /* SDKLayoutHelper.cpp */; };
 		8F63CBD12732D3A1001F08A6 /* SDKPlugInEntrypoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBCE2732D3A1001F08A6 /* SDKPlugInEntrypoint.cpp */; };
 		8F63CBD22732D3A1001F08A6 /* SDKFileHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBCF2732D3A1001F08A6 /* SDKFileHelper.cpp */; };
-		8F63CBED2732D43A001F08A6 /* PLB.fr in Resources */ = {isa = PBXBuildFile; fileRef = 8F63CBEC2732D43A001F08A6 /* PLB.fr */; };
 		8F63CBF12732D446001F08A6 /* PLBNoStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBEF2732D446001F08A6 /* PLBNoStrip.cpp */; };
 		8F63CBF22732D446001F08A6 /* PLBID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBF02732D446001F08A6 /* PLBID.cpp */; };
 		8F63CBFE2732D606001F08A6 /* InDesignModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CBFD2732D606001F08A6 /* InDesignModel.framework */; };
 		8F63CC082732D64B001F08A6 /* libPublicPlugIn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CC072732D64B001F08A6 /* libPublicPlugIn.a */; };
+		9B33EAA92D0C391E0063D503 /* PLB.fr in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBEC2732D43A001F08A6 /* PLB.fr */; };
 		A7EE68781BBBE091000F7FE2 /* PLBPageHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE68741BBBE091000F7FE2 /* PLBPageHelper.cpp */; };
 		A7EE687A1BBBE091000F7FE2 /* TriggerResourceDeps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE68761BBBE091000F7FE2 /* TriggerResourceDeps.cpp */; };
 /* End PBXBuildFile section */
@@ -31,12 +31,11 @@
 			outputFiles = (
 				"$(REZ_COLLECTOR_DIR)/$(INPUT_FILE_NAME).rsrc",
 			);
-			script = "$ID_SDK_ROOT/devtools/bin/odfrc-cmd -d RELEASE $ODFRC_ADDITIONAL_FLAGS -o \"$REZ_COLLECTOR_DIR/$INPUT_FILE_NAME.rsrc\" \"$INPUT_FILE_PATH\"";
+			script = "$ID_SDK_ROOT/devtools/bin/odfrc-cmd -d RELEASE $ODFRC_ADDITIONAL_FLAGS -o \"$REZ_COLLECTOR_DIR/$INPUT_FILE_NAME.rsrc\" \"$INPUT_FILE_PATH\"\n";
 		};
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		77D687F3113861B500D56A9C /* PageLibPlugin_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PageLibPlugin_debug.xcconfig; sourceTree = "<group>"; };
 		77D687F4113861B500D56A9C /* PageLibPlugin_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PageLibPlugin_release.xcconfig; sourceTree = "<group>"; };
 		7FE5845A08AD6DB8007DB654 /* PageLibPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = PageLibPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
 		8F63CBCD2732D3A1001F08A6 /* SDKLayoutHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKLayoutHelper.cpp; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/source/sdksamples/common/SDKLayoutHelper.cpp; sourceTree = "<group>"; };
@@ -130,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				7FE5845A08AD6DB8007DB654 /* PageLibPlugin.xcconfig */,
-				77D687F3113861B500D56A9C /* PageLibPlugin_debug.xcconfig */,
 				77D687F4113861B500D56A9C /* PageLibPlugin_release.xcconfig */,
 			);
 			name = xcconfig;
@@ -192,22 +190,24 @@
 		4B05EEAF08840E8D00D809E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					F957086215C90B3E00C95573 = {
-						DevelopmentTeam = 3WBLWC32YG;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "PageLib" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				Base,
+				en,
+				fr,
+				ja,
+				de,
 			);
 			mainGroup = 4B05EEAD08840E8D00D809E1;
 			productRefGroup = 4B05EEBB08840E8D00D809E1 /* Products */;
@@ -224,7 +224,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F63CBED2732D43A001F08A6 /* PLB.fr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B33EAA92D0C391E0063D503 /* PLB.fr in Sources */,
 				8F63CBD22732D3A1001F08A6 /* SDKFileHelper.cpp in Sources */,
 				8F63CBF22732D446001F08A6 /* PLBID.cpp in Sources */,
 				A7EE687A1BBBE091000F7FE2 /* TriggerResourceDeps.cpp in Sources */,
@@ -280,6 +280,25 @@
 			baseConfigurationReference = 7FE5845A08AD6DB8007DB654 /* PageLibPlugin.xcconfig */;
 			buildSettings = {
 				BUILT_PRODUCTS_DIR = "$(ID_BUILT_SDK_SAMPLES_DIR)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_SEARCH_PATHS)",
@@ -312,9 +331,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77D687F4113861B500D56A9C /* PageLibPlugin_release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3WBLWC32YG;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(GCC_PREPROCESSOR_DEFINITIONS)",
+					NDEBUG,
+					NS_BUILD_32_LIKE_64,
+					SUPPRESS_USING_BIB_NAMESPACE_IN_HEADER,
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_SEARCH_PATHS)",
 					$ID_SDK_ROOT/source/public/interfaces/tables,
@@ -339,10 +367,22 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					$ID_SDK_ROOT/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
+					$ID_SDK_ROOT/build/mac/release_cocoa64/packagefolder/contents/macos,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-no_data_in_code_info",
+					"-ld_classic",
+				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REZ_SEARCH_PATHS = (
+					"$(ID_COMMON_REZ_SEARCH_PATHS)",
+					"$(ID_SDK_ROOT)/external/palettes",
+					"$(ID_SDK_ROOT)/external/workflow",
+					icons,
+					source,
+				);
 				SDKROOT = macosx;
 			};
 			name = Default;

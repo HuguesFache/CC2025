@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'Release_Cocoa64' in project 'PageLib' (no dependencies)

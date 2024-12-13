@@ -1,0 +1,45 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "27b3bd4f-f49d-458d-9baa-77d23c10b973++505",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "9a3e6fcf-557b-44f1-82c1-0755f5b09593++505" : {
+
+    },
+    "27b3bd4f-f49d-458d-9baa-77d23c10b973++505" : {
+
+    },
+    "3ee7f000-b590-4e5f-9329-19c2286b056c++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9a3e6fcf-557b-44f1-82c1-0755f5b09593++505" : 0,
+    "27b3bd4f-f49d-458d-9baa-77d23c10b973++505" : 0,
+    "3ee7f000-b590-4e5f-9329-19c2286b056c++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1D120CAF-0917-42EC-8E00-B5CD8A69044B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9a3e6fcf-557b-44f1-82c1-0755f5b09593++505" : "CC2018\/",
+    "27b3bd4f-f49d-458d-9baa-77d23c10b973++505" : "CC2020\/",
+    "3ee7f000-b590-4e5f-9329-19c2286b056c++505" : "CC2019\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DocLib",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PageMakeUp_GEDIMAT\/doclib\/DocLib.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2020",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "27b3bd4f-f49d-458d-9baa-77d23c10b973++505"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2019",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3ee7f000-b590-4e5f-9329-19c2286b056c++505"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.trias.fr\/CC2018",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9a3e6fcf-557b-44f1-82c1-0755f5b09593++505"
+    }
+  ]
+}

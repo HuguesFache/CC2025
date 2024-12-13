@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,9 @@
 		8F63CBE42732D3D5001F08A6 /* SDKFileHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBE12732D3D5001F08A6 /* SDKFileHelper.cpp */; };
 		8F63CC042732D634001F08A6 /* InDesignModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CC032732D634001F08A6 /* InDesignModel.framework */; };
 		8F63CC0E2732D66E001F08A6 /* libPublicPlugIn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CC0D2732D66E001F08A6 /* libPublicPlugIn.a */; };
-		8F63CC442732D8AD001F08A6 /* TLB.fr in Resources */ = {isa = PBXBuildFile; fileRef = 8F63CC432732D8AD001F08A6 /* TLB.fr */; };
 		8F63CC482732D8BD001F08A6 /* TLBID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CC452732D8BD001F08A6 /* TLBID.cpp */; };
 		8F63CC492732D8BD001F08A6 /* TLBNoStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CC472732D8BD001F08A6 /* TLBNoStrip.cpp */; };
+		9B33EAAC2D0C39500063D503 /* TLB.fr in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CC432732D8AD001F08A6 /* TLB.fr */; };
 		A7EE68841BBBE1F7000F7FE2 /* TLBStyleHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE687E1BBBE1F7000F7FE2 /* TLBStyleHelper.cpp */; };
 		A7EE68861BBBE1F7000F7FE2 /* TLBTxtAttrHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE68801BBBE1F7000F7FE2 /* TLBTxtAttrHelper.cpp */; };
 		A7EE68881BBBE1F7000F7FE2 /* TriggerResourceDeps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A7EE68821BBBE1F7000F7FE2 /* TriggerResourceDeps.cpp */; };
@@ -37,7 +37,6 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		77D687F3113861B500D56A9C /* TextLibPlugin_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TextLibPlugin_debug.xcconfig; sourceTree = "<group>"; };
 		77D687F4113861B500D56A9C /* TextLibPlugin_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TextLibPlugin_release.xcconfig; sourceTree = "<group>"; };
 		7FE5845A08AD6DB8007DB654 /* TextLibPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = TextLibPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
 		8F63CBDF2732D3D5001F08A6 /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				7FE5845A08AD6DB8007DB654 /* TextLibPlugin.xcconfig */,
-				77D687F3113861B500D56A9C /* TextLibPlugin_debug.xcconfig */,
 				77D687F4113861B500D56A9C /* TextLibPlugin_release.xcconfig */,
 			);
 			name = xcconfig;
@@ -199,22 +197,24 @@
 		4B05EEAF08840E8D00D809E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					F957086215C90B3E00C95573 = {
-						DevelopmentTeam = 3WBLWC32YG;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "TextLib" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				Base,
+				de,
+				en,
+				ja,
+				fr,
 			);
 			mainGroup = 4B05EEAD08840E8D00D809E1;
 			productRefGroup = 4B05EEBB08840E8D00D809E1 /* Products */;
@@ -231,7 +231,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F63CC442732D8AD001F08A6 /* TLB.fr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B33EAAC2D0C39500063D503 /* TLB.fr in Sources */,
 				A7EE68841BBBE1F7000F7FE2 /* TLBStyleHelper.cpp in Sources */,
 				A7EE68881BBBE1F7000F7FE2 /* TriggerResourceDeps.cpp in Sources */,
 				8F63CBE32732D3D5001F08A6 /* SDKLayoutHelper.cpp in Sources */,
@@ -288,6 +288,25 @@
 			baseConfigurationReference = 7FE5845A08AD6DB8007DB654 /* TextLibPlugin.xcconfig */;
 			buildSettings = {
 				BUILT_PRODUCTS_DIR = "$(ID_BUILT_SDK_SAMPLES_DIR)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_SEARCH_PATHS)",
@@ -320,9 +339,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77D687F4113861B500D56A9C /* TextLibPlugin_release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3WBLWC32YG;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_SEARCH_PATHS)",
 					$ID_SDK_ROOT/source/public/interfaces/tables,
@@ -346,9 +368,14 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					$ID_SDK_ROOT/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
+					$ID_SDK_ROOT/build/mac/release_cocoa64/packagefolder/contents/macos,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-no_data_in_code_info",
+					"-ld_classic",
+				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};

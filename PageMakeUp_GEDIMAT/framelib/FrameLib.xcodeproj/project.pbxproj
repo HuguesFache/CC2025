@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,9 @@
 		8F63CBCC2732D386001F08A6 /* SDKPlugInEntrypoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBCA2732D386001F08A6 /* SDKPlugInEntrypoint.cpp */; };
 		8F63CBE82732D3FE001F08A6 /* FLBNoStrip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBE52732D3FE001F08A6 /* FLBNoStrip.cpp */; };
 		8F63CBE92732D3FE001F08A6 /* FLBID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBE72732D3FE001F08A6 /* FLBID.cpp */; };
-		8F63CBEB2732D40A001F08A6 /* FLB.fr in Resources */ = {isa = PBXBuildFile; fileRef = 8F63CBEA2732D40A001F08A6 /* FLB.fr */; };
 		8F63CBFC2732D5FA001F08A6 /* InDesignModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CBFB2732D5FA001F08A6 /* InDesignModel.framework */; };
 		8F63CC062732D643001F08A6 /* libPublicPlugIn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F63CC052732D643001F08A6 /* libPublicPlugIn.a */; };
+		9B33EAA82D0C39130063D503 /* FLB.fr in Sources */ = {isa = PBXBuildFile; fileRef = 8F63CBEA2732D40A001F08A6 /* FLB.fr */; };
 		A708E6EC1BB1A98F00819366 /* FLBItemManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A708E6E11BB1A98F00819366 /* FLBItemManager.cpp */; };
 		A708E6EE1BB1A98F00819366 /* FLBItemTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A708E6E31BB1A98F00819366 /* FLBItemTransform.cpp */; };
 		A708E6F01BB1A98F00819366 /* FLBTextFrameHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A708E6E51BB1A98F00819366 /* FLBTextFrameHelper.cpp */; };
@@ -37,7 +37,6 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		77D687F3113861B500D56A9C /* FrameLibPlugin_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FrameLibPlugin_debug.xcconfig; sourceTree = "<group>"; };
 		77D687F4113861B500D56A9C /* FrameLibPlugin_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = FrameLibPlugin_release.xcconfig; sourceTree = "<group>"; };
 		7FE5845A08AD6DB8007DB654 /* FrameLibPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = FrameLibPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
 		8F63CBC92732D386001F08A6 /* SDKFileHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKFileHelper.cpp; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/source/sdksamples/common/SDKFileHelper.cpp; sourceTree = "<group>"; };
@@ -46,10 +45,6 @@
 		8F63CBE62732D3FE001F08A6 /* FLBID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLBID.h; path = source/FLBID.h; sourceTree = "<group>"; };
 		8F63CBE72732D3FE001F08A6 /* FLBID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FLBID.cpp; path = source/FLBID.cpp; sourceTree = "<group>"; };
 		8F63CBEA2732D40A001F08A6 /* FLB.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FLB.fr; path = source/FLB.fr; sourceTree = "<group>"; };
-		8F63CBF32732D5D5001F08A6 /* common_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = common_release.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/build/mac/prj/_shared_build_settings/common_release.xcconfig; sourceTree = "<group>"; };
-		8F63CBF42732D5D5001F08A6 /* cocoa_ui_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = cocoa_ui_debug.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/build/mac/prj/_shared_build_settings/cocoa_ui_debug.xcconfig; sourceTree = "<group>"; };
-		8F63CBF52732D5D5001F08A6 /* common_debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = common_debug.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/build/mac/prj/_shared_build_settings/common_debug.xcconfig; sourceTree = "<group>"; };
-		8F63CBF62732D5D5001F08A6 /* cocoa_ui_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = cocoa_ui_release.xcconfig; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/build/mac/prj/_shared_build_settings/cocoa_ui_release.xcconfig; sourceTree = "<group>"; };
 		8F63CBFB2732D5FA001F08A6 /* InDesignModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModel.framework; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModel.framework; sourceTree = "<group>"; };
 		8F63CC052732D643001F08A6 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = "<group>"; };
 		8F63CC0F2732D68B001F08A6 /* InDesignModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModel.framework; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2025_Products_SDK/build/mac/debug_cocoa64/packagefolder/contents/macos/InDesignModel.framework; sourceTree = "<group>"; };
@@ -142,12 +137,7 @@
 		7F52248408AFCE1F00139994 /* xcconfig */ = {
 			isa = PBXGroup;
 			children = (
-				8F63CBF42732D5D5001F08A6 /* cocoa_ui_debug.xcconfig */,
-				8F63CBF62732D5D5001F08A6 /* cocoa_ui_release.xcconfig */,
-				8F63CBF52732D5D5001F08A6 /* common_debug.xcconfig */,
-				8F63CBF32732D5D5001F08A6 /* common_release.xcconfig */,
 				7FE5845A08AD6DB8007DB654 /* FrameLibPlugin.xcconfig */,
-				77D687F3113861B500D56A9C /* FrameLibPlugin_debug.xcconfig */,
 				77D687F4113861B500D56A9C /* FrameLibPlugin_release.xcconfig */,
 			);
 			name = xcconfig;
@@ -209,22 +199,24 @@
 		4B05EEAF08840E8D00D809E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					F957086215C90B3E00C95573 = {
-						DevelopmentTeam = 3WBLWC32YG;
 						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 4B05EEB008840E8D00D809E1 /* Build configuration list for PBXProject "FrameLib" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				ja,
+				fr,
+				de,
+				Base,
+				en,
 			);
 			mainGroup = 4B05EEAD08840E8D00D809E1;
 			productRefGroup = 4B05EEBB08840E8D00D809E1 /* Products */;
@@ -241,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F63CBEB2732D40A001F08A6 /* FLB.fr in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B33EAA82D0C39130063D503 /* FLB.fr in Sources */,
 				8F63CBE82732D3FE001F08A6 /* FLBNoStrip.cpp in Sources */,
 				A708E6F21BB1A98F00819366 /* TriggerResourceDeps.cpp in Sources */,
 				A708E6EC1BB1A98F00819366 /* FLBItemManager.cpp in Sources */,
@@ -298,6 +290,25 @@
 			baseConfigurationReference = 7FE5845A08AD6DB8007DB654 /* FrameLibPlugin.xcconfig */;
 			buildSettings = {
 				BUILT_PRODUCTS_DIR = "$(ID_BUILT_SDK_SAMPLES_DIR)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_SEARCH_PATHS)",
@@ -330,9 +341,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77D687F4113861B500D56A9C /* FrameLibPlugin_release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3WBLWC32YG;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(GCC_PREPROCESSOR_DEFINITIONS)",
+					NDEBUG,
+					NS_BUILD_32_LIKE_64,
+					SUPPRESS_USING_BIB_NAMESPACE_IN_HEADER,
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(HEADER_SEARCH_PATHS)",
@@ -358,10 +378,22 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					$ID_SDK_ROOT/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
+					$ID_SDK_ROOT/build/mac/release_cocoa64/packagefolder/contents/macos,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-no_data_in_code_info",
+					"-ld_classic",
+				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REZ_SEARCH_PATHS = (
+					"$(ID_COMMON_REZ_SEARCH_PATHS)",
+					"$(ID_SDK_ROOT)/external/palettes",
+					"$(ID_SDK_ROOT)/external/workflow",
+					icons,
+					source,
+				);
 				SDKROOT = macosx;
 			};
 			name = Default;
