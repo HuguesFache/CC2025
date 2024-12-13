@@ -118,10 +118,10 @@
 		7FE5845A08AD6DB8007DB654 /* ParserPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = ParserPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
 		8F4C45E627B6617A007DF64F /* PRS_frFR.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PRS_frFR.fr; path = source/PRS_frFR.fr; sourceTree = "<group>"; };
 		8F4C45E727B6617A007DF64F /* PRS_enUS.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PRS_enUS.fr; path = source/PRS_enUS.fr; sourceTree = "<group>"; };
-		A7515DE51A2CDA9A00B580B8 /* SDKFileHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKFileHelper.cpp; path = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKFileHelper.cpp; sourceTree = "<absolute>"; };
-		A7515DE61A2CDA9A00B580B8 /* SDKLayoutHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKLayoutHelper.cpp; path = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKLayoutHelper.cpp; sourceTree = "<absolute>"; };
-		A7515DE71A2CDA9A00B580B8 /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<absolute>"; };
-		A7515E1B1A2CE2FE00B580B8 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = "<absolute>"; };
+		A7515DE51A2CDA9A00B580B8 /* SDKFileHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKFileHelper.cpp; path = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKFileHelper.cpp; sourceTree = "<absolute>"; };
+		A7515DE61A2CDA9A00B580B8 /* SDKLayoutHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKLayoutHelper.cpp; path = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKLayoutHelper.cpp; sourceTree = "<absolute>"; };
+		A7515DE71A2CDA9A00B580B8 /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<absolute>"; };
+		A7515E1B1A2CE2FE00B580B8 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = "<absolute>"; };
 		A788C1F919B9D1C100924879 /* Blocs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Blocs.cpp; path = source/Blocs.cpp; sourceTree = "<group>"; };
 		A788C1FA19B9D1C100924879 /* Blocs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Blocs.h; path = source/Blocs.h; sourceTree = "<group>"; };
 		A788C1FB19B9D1C100924879 /* Calques.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Calques.cpp; path = source/Calques.cpp; sourceTree = "<group>"; };
@@ -690,9 +690,9 @@
 				DEVELOPMENT_TEAM = 3WBLWC32YG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
-					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
-					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
+					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
+					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
+					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
@@ -738,11 +738,11 @@
 					../framelib/source,
 					../pagelib/source,
 				);
-				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK;
+				ID_SDK_ROOT = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
-					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
+					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
+					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REZ_SEARCH_PATHS = (

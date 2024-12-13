@@ -63,8 +63,8 @@
 		A76918CE1D7EEA620069B90F /* XPBCSetStringCmd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCSetStringCmd.cpp; path = source/XPBCSetStringCmd.cpp; sourceTree = "<group>"; };
 		A76918CF1D7EEA620069B90F /* XPBCStartupShutdown.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCStartupShutdown.cpp; path = source/XPBCStartupShutdown.cpp; sourceTree = "<group>"; };
 		A76918D01D7EEA620069B90F /* XPBCUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCUtils.cpp; path = source/XPBCUtils.cpp; sourceTree = "<group>"; };
-		A76918F21D7EEC760069B90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/Adobe_InDesign_cc2021_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
-		A76918F41D7F04090069B90F /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = "<group>"; };
+		A76918F21D7EEC760069B90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/adobe_indesign_cc2025_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
+		A76918F41D7F04090069B90F /* InDesignModelAndUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModelAndUI.framework; path = ../../../../../../AdobeSDKs/adobe_indesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModelAndUI.framework; sourceTree = "<group>"; };
 		A7EA314A1D86AD8B002AE04A /* IAnnoncesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAnnoncesList.h; path = source/IAnnoncesList.h; sourceTree = "<group>"; };
 		A7EA31521D86AE01002AE04A /* XPBCAnnoncesPanelObserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnoncesPanelObserver.cpp; path = source/XPBCAnnoncesPanelObserver.cpp; sourceTree = "<group>"; };
 		A7EA31531D86AE01002AE04A /* XPBCAnnoncesTreeViewAdapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnoncesTreeViewAdapter.cpp; path = source/XPBCAnnoncesTreeViewAdapter.cpp; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		A7EA315E1D86E269002AE04A /* XPBCAnnonceNodeID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnonceNodeID.cpp; path = source/XPBCAnnonceNodeID.cpp; sourceTree = "<group>"; };
 		A7EA315F1D86E269002AE04A /* XPBCAnnonceNodeID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPBCAnnonceNodeID.h; path = source/XPBCAnnonceNodeID.h; sourceTree = "<group>"; };
 		A7EBB4521D8704A30040DDC3 /* XPBCAnnoncesList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPBCAnnoncesList.cpp; path = source/XPBCAnnoncesList.cpp; sourceTree = "<group>"; };
-		F957084E15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
+		F957084E15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/adobe_indesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
 		F957087215C90B3E00C95573 /* XPubUI.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPubUI.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -365,7 +365,7 @@
 				DEVELOPMENT_TEAM = 3WBLWC32YG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
+					/Users/macmini2024/AdobeSDKs/adobe_indesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
@@ -400,7 +400,7 @@
 					source,
 					../XPubConnection/source,
 				);
-				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK;
+				ID_SDK_ROOT = /Users/macmini2024/AdobeSDKs/adobe_indesign_cc2025_Products_SDK;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};

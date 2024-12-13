@@ -56,9 +56,9 @@
 		A76918EA1D7EEAFB0069B90F /* stdsoap2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stdsoap2.cpp; path = ../../../SoapXPubMac/stdsoap2.cpp; sourceTree = "<group>"; };
 		A76918EB1D7EEAFB0069B90F /* stdsoap2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdsoap2.h; path = ../../../SoapXPubMac/stdsoap2.h; sourceTree = "<group>"; };
 		A76918EC1D7EEAFB0069B90F /* XPubWS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPubWS.h; path = ../../../SoapXPubMac/XPubWS.h; sourceTree = "<group>"; };
-		A76918F01D7EEBE10069B90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/Adobe_InDesign_cc2021_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
-		F957084D15C90B2D00C95573 /* InDesignModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModel.framework; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModel.framework; sourceTree = SOURCE_ROOT; };
-		F957084E15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
+		A76918F01D7EEBE10069B90F /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = ../../../../../../../../Developer/adobe_indesign_cc2025_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<group>"; };
+		F957084D15C90B2D00C95573 /* InDesignModel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InDesignModel.framework; path = ../../../../../../AdobeSDKs/adobe_indesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/InDesignModel.framework; sourceTree = SOURCE_ROOT; };
+		F957084E15C90B2D00C95573 /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/adobe_indesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = SOURCE_ROOT; };
 		F957087215C90B3E00C95573 /* XPubConnection.InDesignPlugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XPubConnection.InDesignPlugin; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -358,7 +358,7 @@
 					source,
 					../XPubUI/source,
 				);
-				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_CC2021_Products_SDK;
+				ID_SDK_ROOT = /Users/macmini2024/AdobeSDKs/adobe_indesign_cc2025_Products_SDK;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};

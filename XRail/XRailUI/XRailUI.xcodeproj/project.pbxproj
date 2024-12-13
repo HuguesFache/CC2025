@@ -50,7 +50,7 @@
 		77D687F4113861B500D56A9C /* XRailUIPlugin_release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = XRailUIPlugin_release.xcconfig; sourceTree = "<group>"; };
 		7FE5845A08AD6DB8007DB654 /* XRailUIPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xcconfig; path = XRailUIPlugin.xcconfig; sourceTree = SOURCE_ROOT; };
 		8F00E5B527B5209100A588F7 /* XRLUI.fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = XRLUI.fr; path = source/XRLUI.fr; sourceTree = "<group>"; };
-		8F00E5B727B520C200A588F7 /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<absolute>"; };
+		8F00E5B727B520C200A588F7 /* SDKPlugInEntrypoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKPlugInEntrypoint.cpp; path = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/source/sdksamples/common/SDKPlugInEntrypoint.cpp; sourceTree = "<absolute>"; };
 		8F4C45F927B66283007DF64F /* XRLUI_enUS.fr */ = {isa = PBXFileReference; lastKnownFileType = text; name = XRLUI_enUS.fr; path = source/XRLUI_enUS.fr; sourceTree = "<group>"; };
 		8F4C45FA27B66283007DF64F /* XRLUI_frFR.fr */ = {isa = PBXFileReference; lastKnownFileType = text; name = XRLUI_frFR.fr; path = source/XRLUI_frFR.fr; sourceTree = "<group>"; };
 		A728CA631CE37D7C0067883D /* libPublicPlugIn.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPublicPlugIn.a; path = ../../../../../../AdobeSDKs/Adobe_InDesign_cc2023_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs/libPublicPlugIn.a; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 				DEVELOPMENT_TEAM = 3WBLWC32YG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
+					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = (
@@ -393,7 +393,7 @@
 					$ID_SDK_ROOT/external/dva/third_party/boost_libraries,
 					$ID_SDK_ROOT/external/dva/third_party/adobe_source_libraries,
 				);
-				ID_SDK_ROOT = /Users/macmini2021/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK;
+				ID_SDK_ROOT = /Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
