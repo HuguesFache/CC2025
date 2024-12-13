@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -743,6 +743,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3WBLWC32YG;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos,
@@ -795,6 +796,11 @@
 					"$(inherited)",
 					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/build/mac/release_cocoa64/packagefolder/contents/macos/libs,
 					/Users/macmini2024/AdobeSDKs/Adobe_InDesign_cc2025_Products_SDK/mac/release_cocoa64/packagefolder/contents/macos/libs,
+				);
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-no_data_in_code_info",
+					"-ld_classic",
 				);
 				PRODUCT_NAME = XPageUI;
 				PROVISIONING_PROFILE_SPECIFIER = "";
